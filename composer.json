@@ -1,0 +1,33 @@
+{
+    "name": "victoire/image-bundle",
+    "type": "symfony-bundle",
+    "description": "Victoire Cms Image component",
+    "keywords": ["cms", "victoire", "image"],
+    "homepage": "http://appventus.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Andrieux",
+            "email": "paul@appventus.com"
+        }
+    ],
+    "require": {
+        "php"                                 : ">=5.3.3",
+        "symfony/framework-bundle"            : "~2.3",
+
+        "victoire/cms-bundle"                : "1.0.*@dev"
+    },
+    "autoload": {
+        "psr-0": { "Victoire\\ImageBundle": "" }
+    },
+    "minimum-stability": "dev",
+
+
+    "target-dir": "Victoire/ImageBundle",
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
