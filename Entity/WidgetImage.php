@@ -18,10 +18,11 @@ class WidgetImage extends Widget
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255, nullable=true)
-     * @VIC\ReceiverProperty("textable")
+     * @ORM\ManyToOne(targetEntity="\Kunstmaan\MediaBundle\Entity\Media")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")
+     *
      */
-    private $url;
+    private $image;
     /**
      * @var string
      *
@@ -38,26 +39,26 @@ class WidgetImage extends Widget
     private $title;
 
     /**
-     * Set url
+     * Set image
      *
-     * @param string $url
+     * @param string $image
      * @return WidgetImage
      */
-    public function setUrl($url)
+    public function setImage($image)
     {
-        $this->url = $url;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get image
      *
      * @return string
      */
-    public function getUrl()
+    public function getImage()
     {
-        return $this->url;
+        return $this->image;
     }
     /**
      * Set alt
