@@ -23,7 +23,7 @@ class WidgetImageType extends WidgetType
     {
         if ($this->entity === null) {
             $builder
-                ->add('url')
+                ->add('image', 'media')
                 ->add('alt')
                 ->add('title');
         } else {
