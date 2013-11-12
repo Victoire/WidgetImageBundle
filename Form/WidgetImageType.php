@@ -15,13 +15,14 @@ class WidgetImageType extends WidgetType
 {
 
     /**
+     * TODO Refactor by splitting in 2 forms type (StaticWidgetImageType + EntityWidgetImageType)
      * define form fields
      * @param FormBuilderInterface $builder
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        if ($this->entity === null) {
+        if ($this->entity_name === null) {
             $builder
                 ->add('image', 'media')
                 ->add('alt')
