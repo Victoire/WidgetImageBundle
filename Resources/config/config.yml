@@ -3,3 +3,9 @@ victoire_cms:
         image:
             class: "Victoire\\ImageBundle\\Entity\\WidgetImage"
             name: image
+
+jms_translation:
+    configs:
+        victoire_image_bundle:
+            dirs: ["@VictoireImageBundle"]
+            output_dir: "@VictoireImageBundle/Resources/translations"
