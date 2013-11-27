@@ -51,6 +51,6 @@ class WidgetImageType extends WidgetType
      */
     public function getName()
     {
-        return 'appventus_venatorcmsbundle_widgetimagetype';
+        return 'appventus_victoirecmsbundle_widgetimagetype';
     }
 }
