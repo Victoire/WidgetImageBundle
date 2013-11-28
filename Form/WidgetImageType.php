@@ -24,9 +24,15 @@ class WidgetImageType extends WidgetType
     {
         if ($this->entity_name === null) {
             $builder
-                ->add('image', 'media')
-                ->add('alt')
-                ->add('title');
+                ->add('image', 'media', array(
+                    'label' => 'widget_image.form.image.label'
+                ))
+                ->add('alt', null, array(
+                    'label' => 'widget_image.form.alt.label'
+                ))
+                ->add('title', null, array(
+                    'label' => 'widget_image.form.title.label'
+                ));
         } else {
             parent::buildForm($builder, $options);
         }

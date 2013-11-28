@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2013-11-27T23:11:47Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2013-11-28T17:12:23Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -10,17 +10,32 @@
         <source>Annuler</source>
         <target state="new">Annuler</target>
         <jms:reference-file line="26">Widget/image/edit.html.twig</jms:reference-file>
-        <jms:reference-file line="25">Widget/image/new.html.twig</jms:reference-file>
+        <jms:reference-file line="27">Widget/image/new.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="7a85f4764bbd6daf1c3545efbbf0f279a6dc0beb" resname="ok">
         <source>Ok</source>
         <target state="new">Ok</target>
         <jms:reference-file line="25">Widget/image/edit.html.twig</jms:reference-file>
-        <jms:reference-file line="24">Widget/image/new.html.twig</jms:reference-file>
+        <jms:reference-file line="26">Widget/image/new.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="fe0e7c9cc30f01fd745b8fd96b2bfc0f7007337d" resname="widget.image.new.action.label">
         <source>widget.image.new.action.label</source>
         <target>Image</target>
+      </trans-unit>
+      <trans-unit id="af01a506e6c6f85d26ed4dad3b451a6c75cd66a5" resname="widget_image.form.alt.label">
+        <source>widget_image.form.alt.label</source>
+        <target>Champs "ALT"</target>
+        <jms:reference-file line="31">ImageBundle/Form/WidgetImageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b4a7991f916e1ad08623059b72f28c1ebff3eca9" resname="widget_image.form.image.label">
+        <source>widget_image.form.image.label</source>
+        <target>Image</target>
+        <jms:reference-file line="28">ImageBundle/Form/WidgetImageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="034279e2d5a13215c1721b1a6fa8866309e011bd" resname="widget_image.form.title.label">
+        <source>widget_image.form.title.label</source>
+        <target>Titre</target>
+        <jms:reference-file line="34">ImageBundle/Form/WidgetImageType.php</jms:reference-file>
       </trans-unit>
     </body>
   </file>

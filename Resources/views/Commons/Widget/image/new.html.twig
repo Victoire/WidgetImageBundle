@@ -12,6 +12,8 @@
     <form method="POST" action="{{path('victoire_cms_widget_create', {'page': page.id,'slot':slot, 'type':'image', 'entity': entity} )}}">
     {#Replace this default rendering by your own form#}
 {% if entity %}
+    {{form_widget(form.page)}}
+    {{form_widget(form.fields)}}
     {{form_widget(form.entity)}}
 {% else %}
     {{form_row(form.image)}}
