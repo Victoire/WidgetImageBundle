@@ -9,7 +9,7 @@
 #}
 <div class="edit-widget">
 {% block form %}
-<form class="ajax" update="widget-{{id}}" method="POST" action="{{path('victoire_cms_widget_edit', {'id':id, 'type':entity, 'page': pageId} )}}">
+<form class="ajax" update="widget-{{id}}" method="POST" action="{{path('victoire_cms_widget_edit', {'id':id, 'type':entity} )}}">
 
 {% if entity %}
     {{form_widget(form.entity)}}

@@ -41,13 +41,12 @@ protected $container;
      *
      * @return widget show
      */
-    public function render($widget, $page)
+    public function render($widget)
     {
         return $this->container->get('victoire_templating')->render(
             "VictoireImageBundle:Widget:image/show.html.twig",
             array(
-                "widget" => $widget,
-                "page" => $page
+                "widget" => $widget
             )
         );
     }
