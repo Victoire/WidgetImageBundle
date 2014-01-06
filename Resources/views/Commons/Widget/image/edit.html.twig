@@ -1,15 +1,9 @@
-{% block body %}
+{% extends 'VictoireCmsBundle:Widget:edit.html.twig' %}
 
-{#
-   _   _   _   _   _   _   _
-  / \ / \ / \ / \ / \ / \ / \
- ( C ) o ) m ) m ) o ) n ) s )
-  \_/ \_/ \_/ \_/ \_/ \_/ \_/
-
-#}
-<div class="edit-widget">
+{% block modal_header_title %}
+{{ 'Image edition'|trans }}
+{% endblock modal_header_title %}
 {% block form %}
-<form class="ajax" update="widget-{{id}}" method="POST" action="{{path('victoire_cms_widget_edit', {'id':id, 'type':entity} )}}">
 
 {% if entity %}
     {{form_widget(form.entity)}}
@@ -21,12 +15,4 @@
 {{form_rest(form)}}
 {{form_errors(form)}}
 
-{% block submit %}
-    <button class="btn btn-success" type="submit">{{ 'ok'|trans|desc('Ok') }}</button>
-    <a class="btn" class="cancel" onclick="cancelWidgetEdition({{id}}, '{{path('victoire_cms_widget_show', {'id':id} )}}');">{{ 'cancel'|trans|desc('Annuler') }}</a>
-{% endblock submit %}
-</form>
 {% endblock form %}
-
-</div>
-{% endblock body %}

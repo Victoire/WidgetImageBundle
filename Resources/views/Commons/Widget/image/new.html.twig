@@ -1,19 +1,8 @@
-{% block body %}
+{% extends 'VictoireCmsBundle:Widget:new.html.twig' %}
 
-{#
-   _   _   _   _   _   _   _
-  / \ / \ / \ / \ / \ / \ / \
- ( C ) o ) m ) m ) o ) n ) s )
-  \_/ \_/ \_/ \_/ \_/ \_/ \_/
-
-#}
-<div id="widget-{{slot}}" class="add-widget">
 {% block form %}
-    <form method="POST" action="{{path('victoire_cms_widget_create', {'page': page.id,'slot':slot, 'type':'image', 'entity': entity} )}}">
-    {#Replace this default rendering by your own form#}
+
 {% if entity %}
-    {{form_widget(form.page)}}
-    {{form_widget(form.fields)}}
     {{form_widget(form.entity)}}
 {% else %}
     {{form_row(form.image)}}
@@ -22,11 +11,5 @@
 {% endif %}
 {{form_rest(form)}}
 {{form_errors(form)}}
-{% block submit %}
-    <button class="btn btn-success" type="submit">{{ 'ok'|trans|desc('Ok') }}</button>
-    <a class="btn" class="cancel" onclick="cancelWidget(this);">{{ 'cancel'|trans|desc('Annuler') }}</a>
-{% endblock submit %}
-    </form>
+
 {% endblock form %}
-</div>
-{% endblock body %}
