@@ -43,7 +43,7 @@ protected $container;
      */
     public function render($widget)
     {
-        return $this->container->get('victoire_templating')->renderByFramework(
+        return $this->container->get('victoire_templating')->render(
             "VictoireImageBundle::show.html.twig",
             array(
                 "widget" => $widget
