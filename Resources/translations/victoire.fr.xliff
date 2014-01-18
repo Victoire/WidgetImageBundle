@@ -10,6 +10,26 @@
         <source>widget.image.new.action.label</source>
         <target state="new">Image</target>
       </trans-unit>
+      <trans-unit resname="modal.form.widget.type.image.label">
+        <source>modal.form.widget.type.image.label</source>
+        <target state="new">Image</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.alt.label">
+        <source>widget_image.form.alt.label</source>
+        <target state="new">Texte alternatif</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.title.label">
+        <source>widget_image.form.title.label</source>
+        <target state="new">Texte au survol</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.image.label">
+        <source>widget_image.form.image.label</source>
+        <target state="new">Image</target>
+      </trans-unit>
+      <trans-unit resname="media.widget.delete">
+        <source>media.widget.delete</source>
+        <target state="new">Supprimer</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
