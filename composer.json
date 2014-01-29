@@ -1,5 +1,5 @@
 {
-    "name": "victoire/image-bundle",
+    "name": "victoire/image-widget",
     "type": "symfony-bundle",
     "description": "Victoire Cms Image component",
     "keywords": ["cms", "victoire", "image"],
