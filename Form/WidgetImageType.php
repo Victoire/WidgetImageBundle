@@ -46,8 +46,9 @@ class WidgetImageType extends WidgetType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Victoire\ImageBundle\Entity\WidgetImage',
-            'widget' => 'image'
+            'data_class'         => 'Victoire\ImageBundle\Entity\WidgetImage',
+            'widget'             => 'image',
+            'translation_domain' => 'victoire'
         ));
     }
 

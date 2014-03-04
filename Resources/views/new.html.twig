@@ -1,0 +1,15 @@
+{% extends 'VictoireCmsBundle:Widget:new.html.twig' %}
+
+{% block form %}
+
+{% if entity %}
+    {{form_widget(form.entity)}}
+{% else %}
+    {{form_row(form.image)}}
+    {{form_row(form.alt)}}
+    {{form_row(form.title)}}
+{% endif %}
+{{form_rest(form)}}
+{{form_errors(form)}}
+
+{% endblock form %}
