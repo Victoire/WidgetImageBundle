@@ -14,6 +14,34 @@
         <source>modal.form.widget.type.image.label</source>
         <target state="new">Image</target>
       </trans-unit>
+      <trans-unit resname="widget_image.form.linkType.label">
+        <source>widget_image.form.linkType.label</source>
+        <target state="new">Type de lien</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.linkType.nolink.choice">
+        <source>widget_image.form.linkType.nolink.choice</source>
+        <target state="new">Aucun lien</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.linkType.url.choice">
+        <source>widget_image.form.linkType.url.choice</source>
+        <target state="new">Lien externe</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.linkType.page.choice">
+        <source>widget_image.form.linkType.page.choice</source>
+        <target state="new">Page interne</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.url.label">
+        <source>widget_image.form.url.label</source>
+        <target state="new">Url</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.page.label">
+        <source>widget_image.form.page.label</source>
+        <target state="new">Page interne</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.page.empty_value">
+        <source>widget_image.form.page.empty_value</source>
+        <target state="new">Choisissez une page dans la liste</target>
+      </trans-unit>
       <trans-unit resname="widget_image.form.alt.label">
         <source>widget_image.form.alt.label</source>
         <target state="new">Texte alternatif</target>

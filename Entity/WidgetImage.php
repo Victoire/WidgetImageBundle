@@ -23,6 +23,16 @@ class WidgetImage extends Widget
      *
      */
     private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="\Kunstmaan\MediaBundle\Entity\Media")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")
+     *
+     */
+    private $link;
+
     /**
      * @var string
      *
@@ -37,6 +47,26 @@ class WidgetImage extends Widget
      * @VIC\ReceiverProperty("textable")
      */
     private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="link_type", type="string", length=255)
+     */
+    private $linkType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=true)
+     */
+    private $url;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Victoire\PageBundle\Entity\BasePage")
+     * @ORM\JoinColumn(name="related_page_id", referencedColumnName="id", onDelete="cascade", nullable=true)
+     */
+    private $relatedPage;
 
     /**
      * Set image
@@ -103,6 +133,75 @@ class WidgetImage extends Widget
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set linkType
+     *
+     * @param string $linkType
+     * @return MenuItem
+     */
+    public function setlinkType($linkType)
+    {
+        $this->linkType = $linkType;
+
+        return $this;
+    }
+
+    /**
+     * Get linkType
+     *
+     * @return string
+     */
+    public function getlinkType()
+    {
+        return $this->linkType;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return MenuItem
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set related_page
+     *
+     * @param BasePage $relatedPage
+     * @return Menu
+     */
+    public function setRelatedPage(BasePage $relatedPage = null)
+    {
+        $this->relatedPage = $relatedPage;
+
+        return $this;
+    }
+
+    /**
+     * Get related_page
+     *
+     * @return BasePage
+     */
+    public function getRelatedPage()
+    {
+        return $this->relatedPage;
     }
 
 }
