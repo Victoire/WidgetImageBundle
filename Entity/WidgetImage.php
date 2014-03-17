@@ -4,6 +4,7 @@ namespace Victoire\ImageBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\CmsBundle\Entity\Widget;
 use Victoire\CmsBundle\Annotations as VIC;
+use Victoire\PageBundle\Entity\BasePage;
 
 /**
  * WidgetImage
