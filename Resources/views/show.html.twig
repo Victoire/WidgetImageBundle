@@ -14,7 +14,7 @@
 {% block content %}
 {% if widget.linkType != 'none' %}
     {% if widget.linkType == 'page' %}
-        {% set link = path('victoire_cms_page_show', {'url' : widget.page.url}) %}
+        {% set link = path('victoire_cms_page_show', {'url' : widget.relatedPage.url}) %}
         {% set target = '_parent' %}
     {% else %}
         {% set link = widget.url %}
