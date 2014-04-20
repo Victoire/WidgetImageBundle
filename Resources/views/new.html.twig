@@ -13,7 +13,7 @@
         {{ form_row(form.url) }}
     </div>
     <div class="vic-linkType vic-linkType-page{% if form.vars.value.linkType != "page" %} vic-hidden{% endif %}">
-        {{ form_row(form.page) }}
+        {{ form_row(form.relatedPage) }}
     </div>
 {% endif %}
 {{form_rest(form)}}

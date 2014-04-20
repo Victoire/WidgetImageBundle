@@ -7,7 +7,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Victoire\CmsBundle\Form\WidgetType;
 
-
 /**
  * WidgetImage form type
  */
@@ -24,17 +23,32 @@ class WidgetImageType extends WidgetType
     {
         if ($this->entity_name === null) {
             $builder
-                ->add('image', 'media', array(
+                ->add(
+                    'image',
+                    'media',
+                    array(
                         'label' => 'widget_image.form.image.label'
-                ))
-                ->add('alt', null, array(
+                    )
+                )
+                ->add(
+                    'alt',
+                    null,
+                    array(
                         'label' => 'widget_image.form.alt.label'
-                ))
-                ->add('title', null, array(
+                    )
+                )
+                ->add(
+                    'title',
+                    null,
+                    array(
                         'label' => 'widget_image.form.title.label'
-                ))
-                ->add('linkType', 'choice', array(
-                        'label' => 'widget_image.form.linkType.label',
+                    )
+                )
+                ->add(
+                    'linkType',
+                    'choice',
+                    array(
+                        'label'   => 'widget_image.form.linkType.label',
                         'choices' => array(
                             'none' => 'widget_image.form.linkType.nolink.choice',
                             'url'  => 'widget_image.form.linkType.url.choice',
@@ -42,13 +56,21 @@ class WidgetImageType extends WidgetType
                         ),
                     )
                 )
-                ->add('url', null, array(
+                ->add(
+                    'url',
+                    null,
+                    array(
                         'label' => 'widget_image.form.url.label'
-                ))
-                ->add('page', null, array(
-                        'label' => 'widget_image.form.page.label',
+                    )
+                )
+                ->add(
+                    'relatedPage',
+                    null,
+                    array(
+                        'label'       => 'widget_image.form.page.label',
                         'empty_value' => 'widget_image.form.page.empty_value'
-                ));
+                    )
+                );
         } else {
             parent::buildForm($builder, $options);
         }
@@ -61,11 +83,13 @@ class WidgetImageType extends WidgetType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class'         => 'Victoire\ImageBundle\Entity\WidgetImage',
-            'widget'             => 'image',
-            'translation_domain' => 'victoire'
-        ));
+        $resolver->setDefaults(
+            array(
+                'data_class'         => 'Victoire\ImageBundle\Entity\WidgetImage',
+                'widget'             => 'image',
+                'translation_domain' => 'victoire'
+            )
+        );
     }
 
 
