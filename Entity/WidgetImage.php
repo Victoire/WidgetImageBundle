@@ -23,7 +23,7 @@ class WidgetImage extends Widget
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")
      *
      */
-    private $image;
+    protected $image;
 
     /**
      * @var string
@@ -32,7 +32,7 @@ class WidgetImage extends Widget
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")
      *
      */
-    private $link;
+    protected $link;
 
     /**
      * @var string
@@ -40,34 +40,34 @@ class WidgetImage extends Widget
      * @ORM\Column(name="alt", type="string", length=255, nullable=true)
      * @VIC\ReceiverProperty("textable")
      */
-    private $alt;
+    protected $alt;
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=true)
      * @VIC\ReceiverProperty("textable")
      */
-    private $title;
+    protected $title;
 
     /**
      * @var string
      *
      * @ORM\Column(name="link_type", type="string", length=255)
      */
-    private $linkType;
+    protected $linkType;
 
     /**
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
      */
-    private $url;
+    protected $url;
 
     /**
      * @ORM\ManyToOne(targetEntity="Victoire\PageBundle\Entity\BasePage")
      * @ORM\JoinColumn(name="related_page_id", referencedColumnName="id", onDelete="cascade", nullable=true)
      */
-    private $relatedPage;
+    protected $relatedPage;
 
     /**
      * Set image
