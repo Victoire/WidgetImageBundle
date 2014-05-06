@@ -14,11 +14,8 @@
     "require": {
         "php"                                 : ">=5.3.3",
         "symfony/framework-bundle"            : "~2.3",
-        "victoire/cms-bundle"                 : "dev-master"
-    },
-    "require-dev": {
-        "victoire/cms-bundle"                 : "dev-develop"
-    },
+        "victoire/cms-bundle"                 : "~0.1"
+    },    
     "autoload": {
         "psr-0": { "Victoire\\ImageBundle": "" }
     },
