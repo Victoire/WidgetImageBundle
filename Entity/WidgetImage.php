@@ -4,7 +4,7 @@ namespace Victoire\ImageBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\CmsBundle\Entity\Widget;
 use Victoire\CmsBundle\Annotations as VIC;
-use Victoire\PageBundle\Entity\BasePage;
+use Victoire\Bundle\PageBundle\Entity\BasePage;
 
 /**
  * WidgetImage
@@ -64,7 +64,7 @@ class WidgetImage extends Widget
     private $url;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Victoire\PageBundle\Entity\BasePage")
+     * @ORM\ManyToOne(targetEntity="Victoire\Bundle\PageBundle\Entity\BasePage")
      * @ORM\JoinColumn(name="related_page_id", referencedColumnName="id", onDelete="cascade", nullable=true)
      */
     private $relatedPage;
