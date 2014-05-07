@@ -8,13 +8,15 @@ use JMS\TranslationBundle\Model\FileSource;
 class DynamicTranslations implements TranslationContainerInterface
 {
     /**
-     * usage example: new Message('example.keymap')->addSource('path/to/source/file', '514', '10'),
-     * @return array the keys to register in jms translation
+     * Get the translations
      */
     public static function getTranslationMessages()
     {
         return array(
-            new Message('widget.image.new.action.label'),
+            new Message('widget.image.new.action.label', 'victoire'),
+            new Message('modal.form.widget.type.image.label', 'victoire'),
+            new Message('form.widget.tab.product.label', 'victoire'),
+            new Message('entity_proxy.form.product.label', 'victoire')
         );
     }
 }

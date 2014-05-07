@@ -205,4 +205,22 @@ class WidgetImage extends Widget
         return $this->relatedPage;
     }
 
+    /**
+     * Get the url of the image
+     *
+     * @return string The url of the image
+     */
+    public function getImageUrl()
+    {
+        $url = null;
+
+        $image = $this->getImage();
+
+        if ($image !== null) {
+            $url = $image->getUrl();
+        }
+
+        return $url;
+    }
+
 }

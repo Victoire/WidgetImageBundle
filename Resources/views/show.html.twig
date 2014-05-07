@@ -1,3 +1,4 @@
+{% trans_default_domain "victoire" %}
 {% block body %}
 
 {#
@@ -12,20 +13,26 @@
 {% block actions %}{{ cms_widget_actions(widget) }}{% endblock actions %}
 
 {% block content %}
-{% if widget.linkType != 'none' %}
-    {% if widget.linkType == 'page' %}
-        {% set link = path('victoire_core_page_show', {'url' : widget.relatedPage.url}) %}
-        {% set target = '_parent' %}
-    {% else %}
-        {% set link = widget.url %}
-        {% set target = '_blank' %}
-    {% endif %}
-        <a href="{{ link }}" target="{{ target }}">
-{% endif %}
-<img src="{{ widget.image.url }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
-{% if widget.linkType != 'none' %}
-</a>
-{% endif %}
+	{% if widget.linkType != 'none' %}
+	    {% if widget.linkType == 'page' %}
+	        {% set link = path('victoire_core_page_show', {'url' : widget.relatedPage.url}) %}
+	        {% set target = '_parent' %}
+	    {% else %}
+	        {% set link = widget.url %}
+	        {% set target = '_blank' %}
+	    {% endif %}
+	        <a href="{{ link }}" target="{{ target }}">
+	{% endif %}
+	{% if widget.getImageUrl == null %}
+	   {{ 'The image was not found'|trans }}
+	{% else %}
+	   <img src="{{ widget.getImageUrl }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
+	{% endif %}
+
+
+	{% if widget.linkType != 'none' %}
+	</a>
+	{% endif %}
 {% endblock content %}
 </div>
 

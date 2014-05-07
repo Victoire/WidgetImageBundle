@@ -1,62 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2013-11-27T23:12:28Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
-      <trans-unit resname="widget.image.new.action.label">
-        <source>widget.image.new.action.label</source>
-        <target state="new">Image</target>
+      <trans-unit id="c1441cce8cb58155f1fd93cd2e44447b17fc0cb3" resname="The image was not found">
+        <source>The image was not found</source>
+        <target>L'image n'a pas été trouvée</target>
       </trans-unit>
-      <trans-unit resname="modal.form.widget.type.image.label">
+      <trans-unit id="26f98005f60c6a43692956117a07223c2eb40657" resname="entity_proxy.form.product.label">
+        <source>entity_proxy.form.product.label</source>
+        <target>Entité</target>
+      </trans-unit>
+      <trans-unit id="06e79d90f7967e020d62c116746a34476e947e30" resname="form.widget.tab.product.label">
+        <source>form.widget.tab.product.label</source>
+        <target>Entité</target>
+      </trans-unit>
+      <trans-unit id="fdf8cef40c0b48030efaaf9996eb9def4423ad50" resname="modal.form.widget.type.image.label">
         <source>modal.form.widget.type.image.label</source>
-        <target state="new">Image</target>
+        <target>Image</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.linkType.label">
-        <source>widget_image.form.linkType.label</source>
-        <target state="new">Type de lien</target>
+      <trans-unit id="fe0e7c9cc30f01fd745b8fd96b2bfc0f7007337d" resname="widget.image.new.action.label">
+        <source>widget.image.new.action.label</source>
+        <target>Image</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.linkType.nolink.choice">
-        <source>widget_image.form.linkType.nolink.choice</source>
-        <target state="new">Aucun lien</target>
-      </trans-unit>
-      <trans-unit resname="widget_image.form.linkType.url.choice">
-        <source>widget_image.form.linkType.url.choice</source>
-        <target state="new">Lien externe</target>
-      </trans-unit>
-      <trans-unit resname="widget_image.form.linkType.page.choice">
-        <source>widget_image.form.linkType.page.choice</source>
-        <target state="new">Page interne</target>
-      </trans-unit>
-      <trans-unit resname="widget_image.form.url.label">
-        <source>widget_image.form.url.label</source>
-        <target state="new">Url</target>
-      </trans-unit>
-      <trans-unit resname="widget_image.form.page.label">
-        <source>widget_image.form.page.label</source>
-        <target state="new">Page interne</target>
-      </trans-unit>
-      <trans-unit resname="widget_image.form.page.empty_value">
-        <source>widget_image.form.page.empty_value</source>
-        <target state="new">Choisissez une page dans la liste</target>
-      </trans-unit>
-      <trans-unit resname="widget_image.form.alt.label">
+      <trans-unit id="af01a506e6c6f85d26ed4dad3b451a6c75cd66a5" resname="widget_image.form.alt.label">
         <source>widget_image.form.alt.label</source>
-        <target state="new">Texte alternatif</target>
+        <target>Texte alternatif</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.title.label">
-        <source>widget_image.form.title.label</source>
-        <target state="new">Texte au survol</target>
-      </trans-unit>
-      <trans-unit resname="widget_image.form.image.label">
+      <trans-unit id="b4a7991f916e1ad08623059b72f28c1ebff3eca9" resname="widget_image.form.image.label">
         <source>widget_image.form.image.label</source>
-        <target state="new">Image</target>
+        <target>Image</target>
       </trans-unit>
-      <trans-unit resname="media.widget.delete">
-        <source>media.widget.delete</source>
-        <target state="new">Supprimer</target>
+      <trans-unit id="7b271405f12b075445b4f28ddeeead3dacdd0464" resname="widget_image.form.linkType.label">
+        <source>widget_image.form.linkType.label</source>
+        <target>Type de lien</target>
+      </trans-unit>
+      <trans-unit id="eb99db122bd6c6fb99f36a92275f18125550e916" resname="widget_image.form.linkType.nolink.choice">
+        <source>widget_image.form.linkType.nolink.choice</source>
+        <target>Aucun lien</target>
+      </trans-unit>
+      <trans-unit id="3ecdf4671487abd48d63bf2a9a78c11915e3edf4" resname="widget_image.form.linkType.page.choice">
+        <source>widget_image.form.linkType.page.choice</source>
+        <target>Page interne</target>
+      </trans-unit>
+      <trans-unit id="9a75f6c811e139706d97d6360e3d9382de396c8d" resname="widget_image.form.linkType.url.choice">
+        <source>widget_image.form.linkType.url.choice</source>
+        <target>Lien externe</target>
+      </trans-unit>
+      <trans-unit id="90349a0a9d4a6f49eeaa02745e89d0619abe2187" resname="widget_image.form.page.empty_value">
+        <source>widget_image.form.page.empty_value</source>
+        <target>Choisissez une page dans la liste</target>
+      </trans-unit>
+      <trans-unit id="24cedb6930b32bc8bca53c0aa7ae8251abb17cf8" resname="widget_image.form.page.label">
+        <source>widget_image.form.page.label</source>
+        <target>Page interne</target>
+      </trans-unit>
+      <trans-unit id="034279e2d5a13215c1721b1a6fa8866309e011bd" resname="widget_image.form.title.label">
+        <source>widget_image.form.title.label</source>
+        <target>Texte au survol</target>
+      </trans-unit>
+      <trans-unit id="7ca4f2fefa19fd0cc9ab6faaeccc5cde79b3eb88" resname="widget_image.form.url.label">
+        <source>widget_image.form.url.label</source>
+        <target>Url</target>
       </trans-unit>
     </body>
   </file>
