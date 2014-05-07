@@ -1,7 +1,7 @@
 services:
-    victoire_cms.twig.widget_image_manager:
+    victoire_core.twig.widget_image_manager:
         class: Victoire\ImageBundle\Widget\Manager\WidgetImageManager
         arguments: [@service_container]
 
     widget_image_manager:
-        alias: victoire_cms.twig.widget_image_manager
+        alias: victoire_core.twig.widget_image_manager

@@ -2,8 +2,8 @@
 namespace Victoire\ImageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\CmsBundle\Entity\Widget;
-use Victoire\CmsBundle\Annotations as VIC;
+use Victoire\Bundle\CoreBundle\Entity\Widget;
+use Victoire\Bundle\CoreBundle\Annotations as VIC;
 use Victoire\Bundle\PageBundle\Entity\BasePage;
 
 /**
@@ -14,7 +14,7 @@ use Victoire\Bundle\PageBundle\Entity\BasePage;
  */
 class WidgetImage extends Widget
 {
-    use \Victoire\CmsBundle\Entity\Traits\WidgetTrait;
+    use \Victoire\Bundle\CoreBundle\Entity\Traits\WidgetTrait;
 
     /**
      * @var string

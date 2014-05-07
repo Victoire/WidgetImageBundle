@@ -1,4 +1,4 @@
-victoire_cms:
+victoire_core:
     widgets:
         image:
             class: "Victoire\\ImageBundle\\Entity\\WidgetImage"

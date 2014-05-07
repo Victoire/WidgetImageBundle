@@ -5,7 +5,7 @@ namespace Victoire\ImageBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Victoire\CmsBundle\Form\WidgetType;
+use Victoire\Bundle\CoreBundle\Form\WidgetType;
 
 /**
  * WidgetImage form type
@@ -98,6 +98,6 @@ class WidgetImageType extends WidgetType
      */
     public function getName()
     {
-        return 'appventus_victoirecmsbundle_widgetimagetype';
+        return 'appventus_victoireCoreBundle_widgetimagetype';
     }
 }
