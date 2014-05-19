@@ -44,16 +44,14 @@
 </div>
 
 <script type="text/javascript">
-$vic(document).ready(function() {
-    $('#appventus_victoirecorebundle_widgetimagetype_linkType').on('change', function(){
-        $('.vic-linkType').addClass('vic-hidden');
-        if ($(this).val() == 'url') {
-            $('.vic-linkType-url').removeClass('vic-hidden');
-        } else if ($(this).val() == 'page') {
-            $('.vic-linkType-page').removeClass('vic-hidden');
+    $vic('#appventus_victoireCoreBundle_widgetimagetype_linkType').on('change', function(){
+        $vic('.vic-linkType').addClass('vic-hidden');
+        if ($vic(this).val() == 'url') {
+            $vic('.vic-linkType-url').removeClass('vic-hidden');
+        } else if ($vic(this).val() == 'page') {
+            $vic('.vic-linkType-page').removeClass('vic-hidden');
         }
     });
-});
-</script
+</script>
 
 {% endblock form %}
