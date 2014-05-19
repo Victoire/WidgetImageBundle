@@ -3,8 +3,30 @@
 
 {% block form %}
 
+<div class="vic-tab-content vic-modal-tab-content">
 {% if entity %}
-    {{form_widget(form.entity)}}
+
+
+
+
+        <div id="picker-{{entity}}" class="vic-tab-pane vic-active">
+
+            {% block form_picker %}
+                {{form_widget(form.entity)}}
+                {{form_row(form.fields)}}
+
+            {% endblock form_picker %}
+        </div>
+        <div id="query-{{entity}}" class="vic-tab-pane">
+
+        {% block form_query %}
+            {{form_row(form.query)}}
+        {% endblock form_query %}
+        </div>
+
+
+
+
 {% else %}
     {{ form_row(form.image) }}
     {{ form_row(form.alt) }}
@@ -19,10 +41,11 @@
 {% endif %}
 {{form_rest(form)}}
 {{form_errors(form)}}
+</div>
 
 <script type="text/javascript">
 $vic(document).ready(function() {
-    $('#appventus_victoireCoreBundle_widgetimagetype_linkType').on('change', function(){
+    $('#appventus_victoirecorebundle_widgetimagetype_linkType').on('change', function(){
         $('.vic-linkType').addClass('vic-hidden');
         if ($(this).val() == 'url') {
             $('.vic-linkType-url').removeClass('vic-hidden');

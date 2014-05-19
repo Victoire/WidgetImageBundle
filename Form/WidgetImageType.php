@@ -98,6 +98,6 @@ class WidgetImageType extends WidgetType
      */
     public function getName()
     {
-        return 'appventus_victoireCoreBundle_widgetimagetype';
+        return 'appventus_victoirecorebundle_widgetimagetype';
     }
 }
