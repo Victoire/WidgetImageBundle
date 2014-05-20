@@ -1,33 +1,17 @@
 {% trans_default_domain "victoire" %}
 {% extends 'VictoireCoreBundle:Widget:edit.html.twig' %}
 
-{% block form %}
-
-<div class="vic-tab-content vic-modal-tab-content">
-{% if entity %}
 
 
+{% block form_picker %}
+    {{form_widget(form.entity)}}
+{% endblock form_picker %}
+{% block form_query %}
+    {{form_row(form.query)}}
+{% endblock form_query %}
 
 
-        <div id="picker-{{entity}}" class="vic-tab-pane vic-active">
-
-            {% block form_picker %}
-                {{form_widget(form.entity)}}
-                {{form_row(form.fields)}}
-
-            {% endblock form_picker %}
-        </div>
-        <div id="query-{{entity}}" class="vic-tab-pane">
-
-        {% block form_query %}
-            {{form_row(form.query)}}
-        {% endblock form_query %}
-        </div>
-
-
-
-
-{% else %}
+{% block form_static %}
     {{ form_row(form.image) }}
     {{ form_row(form.alt) }}
     {{ form_row(form.title) }}
@@ -38,11 +22,11 @@
     <div class="vic-linkType vic-linkType-page{% if form.vars.value.linkType != "page" %} vic-hidden{% endif %}">
         {{ form_row(form.relatedPage) }}
     </div>
-{% endif %}
-{{form_rest(form)}}
-{{form_errors(form)}}
-</div>
+{% endblock form_static %}
 
+
+{% block form %}
+{{ parent() }}
 <script type="text/javascript">
 $vic(document).ready(function() {
     $('#appventus_victoirecorebundle_widgetimagetype_linkType').on('change', function(){
