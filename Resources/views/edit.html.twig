@@ -28,7 +28,7 @@
 {% block form %}
 {{ parent() }}
 <script type="text/javascript">
-    $vic('#appventus_victoireCoreBundle_widgetimagetype_linkType').on('change', function(){
+    $vic('#appventus_victoirecorebundle_widgetimagetype_linkType').on('change', function(){
         $vic('.vic-linkType').addClass('vic-hidden');
         if ($vic(this).val() == 'url') {
             $vic('.vic-linkType-url').removeClass('vic-hidden');
