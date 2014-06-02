@@ -14,8 +14,6 @@ use Victoire\Bundle\PageBundle\Entity\BasePage;
  */
 class WidgetImage extends Widget
 {
-    use \Victoire\Bundle\CoreBundle\Entity\Traits\WidgetTrait;
-
     /**
      * @var string
      *
