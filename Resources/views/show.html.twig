@@ -1,4 +1,6 @@
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 {% trans_default_domain "victoire" %}
+
 {% block body %}
 
 {#
@@ -23,10 +25,10 @@
 	    {% endif %}
 	        <a href="{{ link }}" target="{{ target }}">
 	{% endif %}
-	{% if widget.getImageUrl == null %}
+	{% if content == null %}
 	   {{ 'The image was not found'|trans }}
 	{% else %}
-	   <img src="{{ widget.getImageUrl }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
+	   <img src="{{ content }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
 	{% endif %}
 
 

@@ -2,112 +2,89 @@
 
 namespace Victoire\ImageBundle\Widget\Manager;
 
+use Victoire\Bundle\CoreBundle\Entity\Widget;
 
 use Victoire\ImageBundle\Form\WidgetImageType;
 use Victoire\ImageBundle\Entity\WidgetImage;
+use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManagerInterface;
+use Victoire\Bundle\CoreBundle\Widget\Managers\BaseWidgetManager;
 
-class WidgetImageManager
+
+/**
+ * The widget image manager
+ *
+ * @author Thomas Beaujean
+ *
+ */
+class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInterface
 {
-protected $container;
-
     /**
-     * constructor
+     * Get the static content of the widget
      *
-     * @param ServiceContainer $container
+     * @param Widget $widget
+     * @return string The static content
+     *
+     * @SuppressWarnings checkUnusedFunctionParameters
      */
-    public function __construct($container)
+    protected function getWidgetStaticContent(Widget $widget)
     {
-        $this->container = $container;
+        $url = $widget->getImageUrl();
+        return $url;
     }
 
     /**
-     * create a new WidgetImage
-     * @param Page   $page
-     * @param string $slot
+     * Get the business entity content
+     * @param Widget $widget
+     * @return Ambigous <string, unknown, \Victoire\Bundle\CoreBundle\Widget\Managers\mixed, mixed>
      *
-     * @return $widget
+     * @SuppressWarnings checkUnusedFunctionParameters
      */
-    public function newWidget($page, $slot)
+    protected function getWidgetBusinessEntityContent(Widget $widget)
     {
-        $widget = new WidgetImage();
-        $widget->setPage($page);
-        $widget->setslot($slot);
+        $entity = $widget->getEntity();
 
-        return $widget;
+        $url = $entity->getImageUrl();
+        return $url;
     }
+
     /**
-     * render the WidgetImage
+     * Get the content of the widget by the entity linked to it
+     *
      * @param Widget $widget
      *
-     * @return widget show
-     */
-    public function render($widget)
-    {
-        return $this->container->get('victoire_templating')->render(
-            "VictoireImageBundle::show.html.twig",
-            array(
-                "widget" => $widget
-            )
-        );
-    }
-
-    /**
-     * render WidgetImage form
-     * @param Form           $form
-     * @param WidgetImage    $widget
-     * @param BusinessEntity $entity
-     * @return form
-     */
-    public function renderForm($form, $widget, $entity = null)
-    {
-        return $this->container->get('victoire_templating')->render(
-            "VictoireImageBundle::edit.html.twig",
-            array(
-                "widget" => $widget,
-                'form'   => $form->createView(),
-                'id'     => $widget->getId(),
-                'entity' => $entity
-            )
-        );
-    }
-
-    /**
-     * create a form with given widget
-     * @param WidgetImage $widget
-     * @param string      $entityName
-     * @param string      $namespace
-     * @return $form
-     */
-    public function buildForm($widget, $entityName = null, $namespace = null)
-    {
-        $form = $this->container->get('form.factory')->create(new WidgetImageType($entityName, $namespace), $widget);
-
-        return $form;
-    }
-
-    /**
-     * create form new for WidgetImage
-     * @param Form           $form
-     * @param WidgetImage    $widget
-     * @param string         $slot
-     * @param Page           $page
-     * @param BusinessEntity $entity
+     * @return string
      *
-     * @return new form
+     * @SuppressWarnings checkUnusedFunctionParameters
      */
-    public function renderNewForm($form, $widget, $slot, $page, $entity = null)
+    protected function getWidgetEntityContent(Widget $widget)
     {
+        $entity = $widget->getEntity();
 
-        return $this->container->get('victoire_templating')->render(
-            "VictoireImageBundle::new.html.twig",
-            array(
-                "widget"          => $widget,
-                'form'            => $form->createView(),
-                "slot"            => $slot,
-                "entity"          => $entity,
-                "renderContainer" => true,
-                "page"            => $page
-            )
-        );
+        $url = $entity->getImageUrl();
+        return $url;
+    }
+
+    /**
+     * Get the content of the widget for the query mode
+     *
+     * @param Widget $widget
+     *
+     * @return string
+     *
+     * @SuppressWarnings checkUnusedFunctionParameters
+     */
+    protected function getWidgetQueryContent(Widget $widget)
+    {
+        return '';
+    }
+
+    /**
+     * Get the widget name
+     *
+     * @return string
+     */
+    public function getWidgetName()
+    {
+        return 'image';
     }
 }

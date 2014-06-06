@@ -21,7 +21,11 @@ class WidgetImageType extends WidgetType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        if ($this->entity_name === null) {
+        $namespace = $options['namespace'];
+        $entityName = $options['entityName'];
+
+        //no entity name provided in case of static mode for example
+        if ($entityName === null) {
             $builder
                 ->add(
                     'image',
@@ -45,18 +49,6 @@ class WidgetImageType extends WidgetType
                     )
                 )
                 ->add(
-                    'linkType',
-                    'choice',
-                    array(
-                        'label'   => 'widget_image.form.linkType.label',
-                        'choices' => array(
-                            'none' => 'widget_image.form.linkType.nolink.choice',
-                            'url'  => 'widget_image.form.linkType.url.choice',
-                            'page' => 'widget_image.form.linkType.page.choice'
-                        ),
-                    )
-                )
-                ->add(
                     'url',
                     null,
                     array(
@@ -71,9 +63,21 @@ class WidgetImageType extends WidgetType
                         'empty_value' => 'widget_image.form.page.empty_value'
                     )
                 );
-        } else {
-            parent::buildForm($builder, $options);
         }
+
+        $builder->add(
+            'linkType',
+            'choice',
+            array(
+                'label'   => 'widget_image.form.linkType.label',
+                'choices' => array(
+                    'none' => 'widget_image.form.linkType.nolink.choice',
+                    'url'  => 'widget_image.form.linkType.url.choice',
+                    'page' => 'widget_image.form.linkType.page.choice'
+                ),
+            )
+        );
+        parent::buildForm($builder, $options);
     }
 
 
@@ -83,6 +87,8 @@ class WidgetImageType extends WidgetType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
+        parent::setDefaultOptions($resolver);
+
         $resolver->setDefaults(
             array(
                 'data_class'         => 'Victoire\ImageBundle\Entity\WidgetImage',
@@ -98,6 +104,6 @@ class WidgetImageType extends WidgetType
      */
     public function getName()
     {
-        return 'appventus_victoirecorebundle_widgetimagetype';
+        return 'victoire_widget_form_image';
     }
 }

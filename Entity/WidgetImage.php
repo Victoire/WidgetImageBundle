@@ -58,6 +58,7 @@ class WidgetImage extends Widget
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
+     * @VIC\ReceiverProperty("imageable")
      */
     protected $url;
 

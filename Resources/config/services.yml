@@ -1,7 +1,19 @@
 services:
     victoire_core.twig.widget_image_manager:
         class: Victoire\ImageBundle\Widget\Manager\WidgetImageManager
-        arguments: [@service_container]
+        arguments: 
+            - "@service_container"
 
     widget_image_manager:
         alias: victoire_core.twig.widget_image_manager
+        
+    #alias to the entity
+    victoire.widget.image:
+        class: Victoire\ImageBundle\Entity\WidgetImage
+        
+    #alias to the form
+    victoire.widget.form.image:
+        class: Victoire\ImageBundle\Form\WidgetImageType
+        tags:
+            - { name: form.type , alias: victoire_widget_form_image}
+        
