@@ -15,25 +15,29 @@
 {% block actions %}{{ cms_widget_actions(widget) }}{% endblock actions %}
 
 {% block content %}
-	{% if widget.linkType != 'none' %}
-	    {% if widget.linkType == 'page' %}
-	        {% set link = path('victoire_core_page_show', {'url' : widget.relatedPage.url}) %}
-	        {% set target = '_parent' %}
-	    {% else %}
-	        {% set link = widget.url %}
-	        {% set target = '_blank' %}
-	    {% endif %}
-	        <a href="{{ link }}" target="{{ target }}">
-	{% endif %}
-	{% if content == null %}
-	   {{ 'The image was not found'|trans }}
+    {% if widget.entity != null %}
+		{% if widget.linkType != 'none' %}
+		    {% if widget.linkType == 'page' %}
+		        {% set link = path('victoire_core_page_show', {'url' : widget.relatedPage.url}) %}
+		        {% set target = '_parent' %}
+		    {% else %}
+		        {% set link = widget.url %}
+		        {% set target = '_blank' %}
+		    {% endif %}
+		        <a href="{{ link }}" target="{{ target }}">
+		{% endif %}
+		{% if content == null %}
+		   {{ 'The image was not found'|trans }}
+		{% else %}
+		   <img src="{{ content }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
+		{% endif %}
+
+
+		{% if widget.linkType != 'none' %}
+		</a>
+		{% endif %}
 	{% else %}
-	   <img src="{{ content }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
-	{% endif %}
-
-
-	{% if widget.linkType != 'none' %}
-	</a>
+	   {{ content }}
 	{% endif %}
 {% endblock content %}
 </div>

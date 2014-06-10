@@ -43,8 +43,19 @@ class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInter
     {
         $entity = $widget->getEntity();
 
-        $url = $entity->getImageUrl();
-        return $url;
+        //display a generic content if no entity were specified
+        if ($entity === null) {
+            $imageField = $this->getWidgetGenericBusinessEntityContent($widget);
+        } else {
+            //name of the field to display
+            $fields = $widget->getFields();
+            $fieldName = $fields['url'];
+
+            //the attribute to display
+            $imageField =  $this->getEntityAttributeValue($entity, $fieldName);
+        }
+
+        return $imageField;
     }
 
     /**
@@ -60,8 +71,14 @@ class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInter
     {
         $entity = $widget->getEntity();
 
-        $url = $entity->getImageUrl();
-        return $url;
+        //name of the field to display
+        $fields = $widget->getFields();
+        $fieldName = $fields['url'];
+
+        //the attribute to display
+        $imageField =  $this->getEntityAttributeValue($entity, $fieldName);
+
+        return $imageField;
     }
 
     /**
@@ -86,5 +103,31 @@ class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInter
     public function getWidgetName()
     {
         return 'image';
+    }
+
+
+    /**
+     * Get the generic name of the business EntityWidget
+     *
+     * @param Widget $widget
+     *
+     * @return string
+     */
+    protected function getWidgetGenericBusinessEntityContent(Widget $widget)
+    {
+        //the result
+        $content = '';
+
+        $entityName = $widget->getBusinessEntityName();
+
+        $content = $entityName.' -> ';
+
+        //name of the field to display
+        $fields = $widget->getFields();
+        $fieldName = $fields['url'];
+
+        $content .= $fieldName;
+
+        return $content;
     }
 }
