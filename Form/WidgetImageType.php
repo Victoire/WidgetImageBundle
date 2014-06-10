@@ -1,6 +1,6 @@
 <?php
 
-namespace Victoire\ImageBundle\Form;
+namespace Victoire\Widget\ImageBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -91,7 +91,7 @@ class WidgetImageType extends WidgetType
 
         $resolver->setDefaults(
             array(
-                'data_class'         => 'Victoire\ImageBundle\Entity\WidgetImage',
+                'data_class'         => 'Victoire\Widget\ImageBundle\Entity\WidgetImage',
                 'widget'             => 'image',
                 'translation_domain' => 'victoire'
             )

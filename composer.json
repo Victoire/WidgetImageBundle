@@ -17,8 +17,8 @@
         "victoire/cms-bundle"                 : "~0.1"
     },    
     "autoload": {
-        "psr-0": { "Victoire\\ImageBundle": "" }
+        "psr-0": { "Victoire\\Widget\\ImageBundle": "" }
     },
     "minimum-stability": "dev",
-    "target-dir": "Victoire/ImageBundle"
+    "target-dir": "Victoire/Widget/ImageBundle"
 }

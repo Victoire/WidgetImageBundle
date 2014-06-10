@@ -1,11 +1,11 @@
 <?php
 
-namespace Victoire\ImageBundle\Widget\Manager;
+namespace Victoire\Widget\ImageBundle\Widget\Manager;
 
 use Victoire\Bundle\CoreBundle\Entity\Widget;
 
-use Victoire\ImageBundle\Form\WidgetImageType;
-use Victoire\ImageBundle\Entity\WidgetImage;
+use Victoire\Widget\ImageBundle\Form\WidgetImageType;
+use Victoire\Widget\ImageBundle\Entity\WidgetImage;
 use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManagerInterface;
 use Victoire\Bundle\CoreBundle\Widget\Managers\BaseWidgetManager;
 

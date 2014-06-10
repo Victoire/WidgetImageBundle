@@ -1,7 +1,7 @@
 victoire_core:
     widgets:
         image:
-            class: "Victoire\\ImageBundle\\Entity\\WidgetImage"
+            class: "Victoire\\Widget\\ImageBundle\\Entity\\WidgetImage"
             name: image
 
 jms_translation:

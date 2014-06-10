@@ -1,6 +1,6 @@
 <?php
 
-namespace Victoire\ImageBundle\DependencyInjection;
+namespace Victoire\Widget\ImageBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
