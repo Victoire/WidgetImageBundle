@@ -102,7 +102,7 @@ class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInter
      */
     public function getWidgetName()
     {
-        return 'image';
+        return 'Image';
     }
 
 
