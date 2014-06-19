@@ -222,4 +222,23 @@ class WidgetImage extends Widget
         return $url;
     }
 
+    /**
+     * Get the link
+     *
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * Set the link
+     *
+     * @param string $link
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+    }
 }

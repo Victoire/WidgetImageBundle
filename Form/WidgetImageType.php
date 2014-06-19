@@ -12,16 +12,14 @@ use Victoire\Bundle\CoreBundle\Form\WidgetType;
  */
 class WidgetImageType extends WidgetType
 {
-
     /**
-     * TODO Refactor by splitting in 2 forms type (StaticWidgetImageType + EntityWidgetImageType)
      * define form fields
+     *
      * @param FormBuilderInterface $builder
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $namespace = $options['namespace'];
         $entityName = $options['entityName'];
 
         //no entity name provided in case of static mode for example
@@ -80,7 +78,6 @@ class WidgetImageType extends WidgetType
         parent::buildForm($builder, $options);
     }
 
-
     /**
      * bind form to WidgetRedactor entity
      * @param OptionsResolverInterface $resolver
@@ -98,9 +95,10 @@ class WidgetImageType extends WidgetType
         );
     }
 
-
     /**
      * get form name
+     *
+     * @return string The name of the form
      */
     public function getName()
     {
