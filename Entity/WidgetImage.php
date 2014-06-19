@@ -5,6 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Victoire\Bundle\CoreBundle\Entity\Widget;
 use Victoire\Bundle\CoreBundle\Annotations as VIC;
 use Victoire\Bundle\PageBundle\Entity\BasePage;
+use Victoire\Bundle\MediaBundle\Entity\Media;
 
 /**
  * WidgetImage
@@ -22,15 +23,6 @@ class WidgetImage extends Widget
      *
      */
     protected $image;
-
-    /**
-     * @var string
-     *
-     * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
-     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")
-     *
-     */
-    protected $link;
 
     /**
      * @var string
@@ -74,7 +66,7 @@ class WidgetImage extends Widget
      * @param string $image
      * @return WidgetImage
      */
-    public function setImage($image)
+    public function setImage(Media $image)
     {
         $this->image = $image;
 
@@ -220,25 +212,5 @@ class WidgetImage extends Widget
         }
 
         return $url;
-    }
-
-    /**
-     * Get the link
-     *
-     * @return string
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * Set the link
-     *
-     * @param string $link
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
     }
 }
