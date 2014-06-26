@@ -1,4 +1,6 @@
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 {% trans_default_domain "victoire" %}
+
 {% block body %}
 
 {#
@@ -13,6 +15,7 @@
 {% block actions %}{{ cms_widget_actions(widget) }}{% endblock actions %}
 
 {% block content %}
+
 	{% if widget.linkType != 'none' %}
 	    {% if widget.linkType == 'page' %}
 	        {% set link = path('victoire_core_page_show', {'url' : widget.relatedPage.url}) %}
@@ -23,16 +26,21 @@
 	    {% endif %}
 	        <a href="{{ link }}" target="{{ target }}">
 	{% endif %}
-	{% if widget.getImageUrl == null %}
+	{% if content == null %}
 	   {{ 'The image was not found'|trans }}
 	{% else %}
-	   <img src="{{ widget.getImageUrl }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
+	  {% if (widget.entity != null or widget.mode == 'static') %}
+	     <img src="{{ content }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
+	  {% else %}
+	   {{ content }}
 	{% endif %}
 
+	{% endif %}
 
 	{% if widget.linkType != 'none' %}
 	</a>
 	{% endif %}
+
 {% endblock content %}
 </div>
 

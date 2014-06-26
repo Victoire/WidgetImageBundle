@@ -1,10 +1,11 @@
 <?php
-namespace Victoire\ImageBundle\Entity;
+namespace Victoire\Widget\ImageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\Bundle\CoreBundle\Entity\Widget;
 use Victoire\Bundle\CoreBundle\Annotations as VIC;
 use Victoire\Bundle\PageBundle\Entity\BasePage;
+use Victoire\Bundle\MediaBundle\Entity\Media;
 
 /**
  * WidgetImage
@@ -14,8 +15,6 @@ use Victoire\Bundle\PageBundle\Entity\BasePage;
  */
 class WidgetImage extends Widget
 {
-    use \Victoire\Bundle\CoreBundle\Entity\Traits\WidgetTrait;
-
     /**
      * @var string
      *
@@ -24,15 +23,6 @@ class WidgetImage extends Widget
      *
      */
     protected $image;
-
-    /**
-     * @var string
-     *
-     * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
-     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")
-     *
-     */
-    protected $link;
 
     /**
      * @var string
@@ -60,6 +50,7 @@ class WidgetImage extends Widget
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
+     * @VIC\ReceiverProperty("imageable")
      */
     protected $url;
 
@@ -75,7 +66,7 @@ class WidgetImage extends Widget
      * @param string $image
      * @return WidgetImage
      */
-    public function setImage($image)
+    public function setImage(Media $image)
     {
         $this->image = $image;
 
@@ -222,5 +213,4 @@ class WidgetImage extends Widget
 
         return $url;
     }
-
 }

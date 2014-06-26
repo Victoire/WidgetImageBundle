@@ -2,39 +2,6 @@
 {% extends 'VictoireCoreBundle:Widget:new.html.twig' %}
 
 
-{% block form_picker %}
-    {{form_widget(form.entity)}}
-{% endblock form_picker %}
-{% block form_query %}
-    {{form_row(form.query)}}
-{% endblock form_query %}
-{% block form_static %}
-    {{ form_row(form.image) }}
-    {{ form_row(form.alt) }}
-    {{ form_row(form.title) }}
-    {{ form_row(form.linkType) }}
-    <div class="vic-linkType vic-linkType-url{% if form.vars.value.linkType != "url" %} vic-hidden{% endif %}">
-        {{ form_row(form.url) }}
-    </div>
-    <div class="vic-linkType vic-linkType-page{% if form.vars.value.linkType != "page" %} vic-hidden{% endif %}">
-        {{ form_row(form.relatedPage) }}
-    </div>
-{% endblock form_static %}
-
-
 {% block form %}
 {{ parent() }}
-<script type="text/javascript">
-$vic(document).ready(function() {
-    $('#appventus_victoirecorebundle_widgetimagetype_linkType').on('change', function(){
-        $('.vic-linkType').addClass('vic-hidden');
-        if ($(this).val() == 'url') {
-            $('.vic-linkType-url').removeClass('vic-hidden');
-        } else if ($(this).val() == 'page') {
-            $('.vic-linkType-page').removeClass('vic-hidden');
-        }
-    });
-});
-</script
-
 {% endblock form %}
