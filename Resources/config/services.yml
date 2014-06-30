@@ -3,6 +3,7 @@ services:
         class: Victoire\Widget\ImageBundle\Widget\Manager\WidgetImageManager
         arguments: 
             - "@service_container"
+            - "Image"
 
     widget_image_manager:
         alias: victoire_core.twig.widget_image_manager

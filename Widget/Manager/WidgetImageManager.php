@@ -96,17 +96,6 @@ class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInter
     }
 
     /**
-     * Get the widget name
-     *
-     * @return string
-     */
-    public function getWidgetName()
-    {
-        return 'Image';
-    }
-
-
-    /**
      * Get the generic name of the business EntityWidget
      *
      * @param Widget $widget
