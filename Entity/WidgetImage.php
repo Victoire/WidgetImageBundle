@@ -4,7 +4,7 @@ namespace Victoire\Widget\ImageBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\Bundle\CoreBundle\Entity\Widget;
 use Victoire\Bundle\CoreBundle\Annotations as VIC;
-use Victoire\Bundle\PageBundle\Entity\BasePage;
+use Victoire\Bundle\PageBundle\Entity\Page;
 use Victoire\Bundle\MediaBundle\Entity\Media;
 
 /**
@@ -55,7 +55,7 @@ class WidgetImage extends Widget
     protected $url;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Victoire\Bundle\PageBundle\Entity\BasePage")
+     * @ORM\ManyToOne(targetEntity="Victoire\Bundle\PageBundle\Entity\Page")
      * @ORM\JoinColumn(name="related_page_id", referencedColumnName="id", onDelete="cascade", nullable=true)
      */
     protected $relatedPage;
@@ -176,10 +176,10 @@ class WidgetImage extends Widget
     /**
      * Set related_page
      *
-     * @param BasePage $relatedPage
+     * @param Page $relatedPage
      * @return Menu
      */
-    public function setRelatedPage(BasePage $relatedPage = null)
+    public function setRelatedPage(Page $relatedPage = null)
     {
         $this->relatedPage = $relatedPage;
 
@@ -189,7 +189,7 @@ class WidgetImage extends Widget
     /**
      * Get related_page
      *
-     * @return BasePage
+     * @return Page
      */
     public function getRelatedPage()
     {
