@@ -1,19 +1,6 @@
 {% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 {% trans_default_domain "victoire" %}
 
-{% block body %}
-
-{#
-   _   _   _   _   _   _   _
-  / \ / \ / \ / \ / \ / \ / \
- ( C ) o ) m ) m ) o ) n ) s )
-  \_/ \_/ \_/ \_/ \_/ \_/ \_/
-
-#}
-
-<div class="vic-widget" id="widget-{{ widget.id }}">
-{% block actions %}{{ cms_widget_actions(widget) }}{% endblock actions %}
-
 {% block content %}
 
 	{% if widget.linkType != 'none' %}
@@ -42,6 +29,3 @@
 	{% endif %}
 
 {% endblock content %}
-</div>
-
-{% endblock body %}

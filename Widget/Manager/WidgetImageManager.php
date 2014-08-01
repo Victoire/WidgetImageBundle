@@ -4,24 +4,18 @@ namespace Victoire\Widget\ImageBundle\Widget\Manager;
 
 use Victoire\Bundle\CoreBundle\Entity\Widget;
 
-use Victoire\Widget\ImageBundle\Form\WidgetImageType;
-use Victoire\Widget\ImageBundle\Entity\WidgetImage;
 use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManagerInterface;
 use Victoire\Bundle\CoreBundle\Widget\Managers\BaseWidgetManager;
 
-
 /**
  * The widget image manager
- *
- * @author Thomas Beaujean
- *
  */
 class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInterface
 {
     /**
      * Get the static content of the widget
-     *
      * @param Widget $widget
+     *
      * @return string The static content
      *
      * @SuppressWarnings checkUnusedFunctionParameters
@@ -29,19 +23,21 @@ class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInter
     protected function getWidgetStaticContent(Widget $widget)
     {
         $url = $widget->getImageUrl();
+
         return $url;
     }
 
     /**
      * Get the business entity content
      * @param Widget $widget
+     *
      * @return Ambigous <string, unknown, \Victoire\Bundle\CoreBundle\Widget\Managers\mixed, mixed>
      *
      * @SuppressWarnings checkUnusedFunctionParameters
      */
     protected function getWidgetBusinessEntityContent(Widget $widget)
     {
-        $entity = $widget->getEntity();
+        $entity = $widget->getBusinessEntity();
 
         //display a generic content if no entity were specified
         if ($entity === null) {
@@ -60,7 +56,6 @@ class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInter
 
     /**
      * Get the content of the widget by the entity linked to it
-     *
      * @param Widget $widget
      *
      * @return string
@@ -69,7 +64,7 @@ class WidgetImageManager extends BaseWidgetManager implements WidgetManagerInter
      */
     protected function getWidgetEntityContent(Widget $widget)
     {
-        $entity = $widget->getEntity();
+        $entity = $widget->getBusinessEntity();
 
         //name of the field to display
         $fields = $widget->getFields();
