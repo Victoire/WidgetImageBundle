@@ -10,7 +10,7 @@ use Victoire\Bundle\MediaBundle\Entity\Media;
 /**
  * WidgetImage
  *
- * @ORM\Table("cms_widget_image")
+ * @ORM\Table("vic_widget_image")
  * @ORM\Entity
  */
 class WidgetImage extends Widget
@@ -62,8 +62,8 @@ class WidgetImage extends Widget
 
     /**
      * Set image
-     *
      * @param string $image
+     *
      * @return WidgetImage
      */
     public function setImage(Media $image)
@@ -84,8 +84,8 @@ class WidgetImage extends Widget
     }
     /**
      * Set alt
-     *
      * @param string $alt
+     *
      * @return WidgetImage
      */
     public function setAlt($alt)
@@ -106,8 +106,8 @@ class WidgetImage extends Widget
     }
     /**
      * Set title
-     *
      * @param string $title
+     *
      * @return WidgetImage
      */
     public function setTitle($title)
@@ -129,8 +129,8 @@ class WidgetImage extends Widget
 
     /**
      * Set linkType
-     *
      * @param string $linkType
+     *
      * @return MenuItem
      */
     public function setlinkType($linkType)
@@ -152,8 +152,8 @@ class WidgetImage extends Widget
 
     /**
      * Set url
-     *
      * @param string $url
+     *
      * @return MenuItem
      */
     public function setUrl($url)
@@ -175,8 +175,8 @@ class WidgetImage extends Widget
 
     /**
      * Set related_page
-     *
      * @param Page $relatedPage
+     *
      * @return Menu
      */
     public function setRelatedPage(Page $relatedPage = null)
