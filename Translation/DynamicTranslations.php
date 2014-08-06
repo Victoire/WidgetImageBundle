@@ -3,11 +3,8 @@ namespace Victoire\Widget\ImageBundle\Translation;
 
 use JMS\TranslationBundle\Model\Message;
 use JMS\TranslationBundle\Translation\TranslationContainerInterface;
-use JMS\TranslationBundle\Model\FileSource;
 
 /**
- *
- * @author Thomas Beaujean
  *
  */
 class DynamicTranslations implements TranslationContainerInterface
