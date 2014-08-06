@@ -8,18 +8,18 @@
 	        {% set link = path('victoire_core_page_show', {'url' : relatedPage.url}) %}
 	        {% set target = '_parent' %}
 	    {% else %}
-	        {% set link = widget.url %}
+	        {% set link = url %}
 	        {% set target = '_blank' %}
 	    {% endif %}
 	        <a href="{{ link }}" target="{{ target }}">
 	{% endif %}
-	{% if url == null %}
+	{% if image.url == null %}
 	   {{ 'The image was not found'|trans }}
 	{% else %}
 	  {% if (entity != null or mode == 'static') %}
-	     <img src="{{ url }}" title="{{ title }}" alt="{{ alt }}" />
+	     <img src="{{ image.url }}" title="{{ title }}" alt="{{ alt }}" />
 	  {% else %}
-	   {{ url }}
+	   {{ image.url }}
 	{% endif %}
 
 	{% endif %}
