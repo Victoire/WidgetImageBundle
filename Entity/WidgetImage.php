@@ -2,7 +2,7 @@
 namespace Victoire\Widget\ImageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\Bundle\CoreBundle\Entity\Widget;
+use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Bundle\CoreBundle\Annotations as VIC;
 use Victoire\Bundle\PageBundle\Entity\Page;
 use Victoire\Bundle\MediaBundle\Entity\Media;
