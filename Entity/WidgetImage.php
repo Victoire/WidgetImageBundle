@@ -2,7 +2,7 @@
 namespace Victoire\Widget\ImageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\Bundle\CoreBundle\Entity\Widget;
+use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Bundle\CoreBundle\Annotations as VIC;
 use Victoire\Bundle\PageBundle\Entity\Page;
 use Victoire\Bundle\MediaBundle\Entity\Media;
@@ -63,7 +63,7 @@ class WidgetImage extends Widget
     /**
      * Set image
      *
-     * @param string $image
+     * @param  string      $image
      * @return WidgetImage
      */
     public function setImage(Media $image)
@@ -85,7 +85,7 @@ class WidgetImage extends Widget
     /**
      * Set alt
      *
-     * @param string $alt
+     * @param  string      $alt
      * @return WidgetImage
      */
     public function setAlt($alt)
@@ -107,7 +107,7 @@ class WidgetImage extends Widget
     /**
      * Set title
      *
-     * @param string $title
+     * @param  string      $title
      * @return WidgetImage
      */
     public function setTitle($title)
@@ -130,7 +130,7 @@ class WidgetImage extends Widget
     /**
      * Set linkType
      *
-     * @param string $linkType
+     * @param  string   $linkType
      * @return MenuItem
      */
     public function setlinkType($linkType)
@@ -153,7 +153,7 @@ class WidgetImage extends Widget
     /**
      * Set url
      *
-     * @param string $url
+     * @param  string   $url
      * @return MenuItem
      */
     public function setUrl($url)
@@ -176,7 +176,7 @@ class WidgetImage extends Widget
     /**
      * Set related_page
      *
-     * @param Page $relatedPage
+     * @param  Page $relatedPage
      * @return Menu
      */
     public function setRelatedPage(Page $relatedPage = null)

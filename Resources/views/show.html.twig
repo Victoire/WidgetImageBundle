@@ -11,14 +11,14 @@
 
 #}
 
-<div class="vic-widget" id="widget-{{ widget.id }}">
+<div class="vic-widget" id="widget-{{ id }}">
 {% block actions %}{{ cms_widget_actions(widget) }}{% endblock actions %}
 
 {% block content %}
 
-	{% if widget.linkType != 'none' %}
-	    {% if widget.linkType == 'page' %}
-	        {% set link = path('victoire_core_page_show', {'url' : widget.relatedPage.url}) %}
+	{% if linkType != 'none' %}
+	    {% if linkType == 'page' %}
+	        {% set link = path('victoire_core_page_show', {'url' : relatedPage.url}) %}
 	        {% set target = '_parent' %}
 	    {% else %}
 	        {% set link = widget.url %}
@@ -26,18 +26,18 @@
 	    {% endif %}
 	        <a href="{{ link }}" target="{{ target }}">
 	{% endif %}
-	{% if content == null %}
+	{% if url == null %}
 	   {{ 'The image was not found'|trans }}
 	{% else %}
-	  {% if (widget.entity != null or widget.mode == 'static') %}
-	     <img src="{{ content }}" title="{{ widget.title }}" alt="{{ widget.alt }}" />
+	  {% if (entity != null or mode == 'static') %}
+	     <img src="{{ url }}" title="{{ title }}" alt="{{ alt }}" />
 	  {% else %}
-	   {{ content }}
+	   {{ url }}
 	{% endif %}
 
 	{% endif %}
 
-	{% if widget.linkType != 'none' %}
+	{% if linkType != 'none' %}
 	</a>
 	{% endif %}
 
