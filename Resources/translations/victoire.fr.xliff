@@ -34,6 +34,30 @@
         <source>widget_image.form.image.label</source>
         <target>Image</target>
       </trans-unit>
+      <trans-unit resname="widget_image.form.width.label">
+        <source>widget_image.form.width.label</source>
+        <target>Largeur</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.height.label">
+        <source>widget_image.form.height.label</source>
+        <target>Hauteur</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.width.help_label">
+        <source>widget_image.form.width.help_label</source>
+        <target>en pixels</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.height.help_label">
+        <source>widget_image.form.height.help_label</source>
+        <target>en pixels</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.alt.help_label">
+        <source>widget_image.form.alt.help_label</source>
+        <target>utilisé pour définir l'image aux yeux des moteurs de recherche</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.alt.help_block">
+        <source>widget_image.form.alt.help_block</source>
+        <target>Choisissez quelques termes décrivant votre image</target>
+      </trans-unit>
       <trans-unit id="7b271405f12b075445b4f28ddeeead3dacdd0464" resname="widget_image.form.linkType.label">
         <source>widget_image.form.linkType.label</source>
         <target>Type de lien</target>

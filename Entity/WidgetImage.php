@@ -49,6 +49,20 @@ class WidgetImage extends Widget
     /**
      * @var string
      *
+     * @ORM\Column(name="width", type="string", length=255)
+     */
+    protected $width;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="height", type="string", length=255)
+     */
+    protected $height;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
      * @VIC\ReceiverProperty("imageable")
      */
@@ -148,6 +162,52 @@ class WidgetImage extends Widget
     public function getlinkType()
     {
         return $this->linkType;
+    }
+
+    /**
+     * Set width
+     * @param string $width
+     *
+     * @return MenuItem
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+
+        return $this;
+    }
+
+    /**
+     * Get width
+     *
+     * @return string
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * Set height
+     * @param string $height
+     *
+     * @return MenuItem
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+
+        return $this;
+    }
+
+    /**
+     * Get height
+     *
+     * @return string
+     */
+    public function getHeight()
+    {
+        return $this->height;
     }
 
     /**
