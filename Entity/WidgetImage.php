@@ -49,14 +49,14 @@ class WidgetImage extends Widget
     /**
      * @var string
      *
-     * @ORM\Column(name="width", type="string", length=255)
+     * @ORM\Column(name="width", type="string", length=255, nullable=true)
      */
     protected $width;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="height", type="string", length=255)
+     * @ORM\Column(name="height", type="string", length=255, nullable=true)
      */
     protected $height;
 
