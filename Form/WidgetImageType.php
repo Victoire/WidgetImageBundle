@@ -36,8 +36,8 @@ class WidgetImageType extends WidgetType
                     null,
                     array(
                         'label' => 'widget_image.form.alt.label',
-                        'help_label' => 'widget_image.form.alt.help_label',
-                        'help_block' => 'widget_image.form.alt.help_block',
+                        'vic_help_label' => 'widget_image.form.alt.help_label',
+                        'vic_help_block' => 'widget_image.form.alt.vic_help_block',
                     )
                 )
                 ->add(
@@ -59,7 +59,7 @@ class WidgetImageType extends WidgetType
                     null,
                     array(
                         'label' => 'widget_image.form.width.label',
-                        'help_label' => 'widget_image.form.width.help_label',
+                        'vic_help_label' => 'widget_image.form.width.help_label',
                     )
                 )
                 ->add(
@@ -67,7 +67,7 @@ class WidgetImageType extends WidgetType
                     null,
                     array(
                         'label' => 'widget_image.form.height.label',
-                        'help_label' => 'widget_image.form.width.help_label',
+                        'vic_help_label' => 'widget_image.form.width.help_label',
                     )
                 )
                 ->add(
