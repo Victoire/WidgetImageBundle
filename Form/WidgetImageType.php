@@ -106,7 +106,7 @@ class WidgetImageType extends WidgetType
         $resolver->setDefaults(
             array(
                 'data_class'         => 'Victoire\Widget\ImageBundle\Entity\WidgetImage',
-                'widget'             => 'image',
+                'widget'             => 'Image',
                 'translation_domain' => 'victoire'
             )
         );

@@ -20,6 +20,7 @@ class WidgetImage extends Widget
      *
      * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")
+     * @VIC\ReceiverProperty("imageable")
      *
      */
     protected $image;
@@ -64,7 +65,7 @@ class WidgetImage extends Widget
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
-     * @VIC\ReceiverProperty("imageable")
+     * @VIC\ReceiverProperty("textable")
      */
     protected $url;
 
