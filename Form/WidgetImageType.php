@@ -37,7 +37,6 @@ class WidgetImageType extends WidgetType
                     array(
                         'label' => 'widget_image.form.alt.label',
                         'vic_help_label' => 'widget_image.form.alt.help_label',
-                        'vic_help_block' => 'widget_image.form.alt.vic_help_block',
                     )
                 )
                 ->add(
@@ -45,13 +44,6 @@ class WidgetImageType extends WidgetType
                     null,
                     array(
                         'label' => 'widget_image.form.title.label'
-                    )
-                )
-                ->add(
-                    'url',
-                    null,
-                    array(
-                        'label' => 'widget_image.form.url.label'
                     )
                 )
                 ->add(
@@ -70,28 +62,9 @@ class WidgetImageType extends WidgetType
                         'vic_help_label' => 'widget_image.form.width.help_label',
                     )
                 )
-                ->add(
-                    'relatedPage',
-                    null,
-                    array(
-                        'label'       => 'widget_image.form.page.label',
-                        'empty_value' => 'widget_image.form.page.empty_value'
-                    )
-                );
+                ->add('link', 'victoire_link')
+                ;
         }
-
-        $builder->add(
-            'linkType',
-            'choice',
-            array(
-                'label'   => 'widget_image.form.linkType.label',
-                'choices' => array(
-                    'none' => 'widget_image.form.linkType.nolink.choice',
-                    'url'  => 'widget_image.form.linkType.url.choice',
-                    'page' => 'widget_image.form.linkType.page.choice'
-                ),
-            )
-        );
         parent::buildForm($builder, $options);
     }
 
