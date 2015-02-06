@@ -54,10 +54,6 @@
         <source>widget_image.form.alt.help_label</source>
         <target>utilisé pour définir l'image aux yeux des moteurs de recherche</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.alt.vic_help_block">
-        <source>widget_image.form.alt.vic_help_block</source>
-        <target>Choisissez quelques termes décrivant votre image</target>
-      </trans-unit>
       <trans-unit id="7b271405f12b075445b4f28ddeeead3dacdd0464" resname="widget_image.form.linkType.label">
         <source>widget_image.form.linkType.label</source>
         <target>Type de lien</target>

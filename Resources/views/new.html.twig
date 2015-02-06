@@ -3,27 +3,35 @@
 {% block form_static %}
 <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
     {{ form_start(form) }}
-        <div class="row">
-            <div class="vic-col-xs-8">
-            {{ form_row(form.image) }}
+
+    <div class="row">
+        <div class="vic-col-sm-4">
+            {{ form_widget(form.image) }}
+            {{ form_errors(form.image) }}
+        </div>
+
+        <div class="vic-col-sm-4">
+            <div class="row">
+                <div class="vic-col-sm-6">
+                    {{ form_row(form.width) }}
+                </div>
+
+                <div class="vic-col-sm-6">
+                    {{ form_row(form.height) }}
+                </div>
             </div>
-            <div class="vic-col-xs-4">
-                {{ form_label(form.width) }}
-                {{ form_widget(form.width) }}
-                {{ form_label(form.height) }}
-                {{ form_widget(form.height) }}
-            </div>
+
+            {{ form_row(form.alt) }}
+
+            {{ form_row(form.title) }}
         </div>
-        {{ form_row(form.alt) }}
-        {{ form_row(form.title) }}
-        {{ form_row(form.linkType) }}
-        <div class="vic-linkType vic-linkType-url{% if form.vars.value.linkType != "url" %} vic-hidden{% endif %}">
-            {{ form_row(form.url) }}
+
+        <div class="vic-col-sm-4">
+            {{ form_widget(form.link) }}
         </div>
-        <div class="vic-linkType vic-linkType-page{% if form.vars.value.linkType != "page" %} vic-hidden{% endif %}">
-            {{ form_row(form.relatedPage) }}
-        </div>
-        {{form_rest(form)}}
+    </div>
+
+    {{ form_rest(form) }}
     {{ form_end(form) }}
 </div>
 {% endblock form_static %}
