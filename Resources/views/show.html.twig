@@ -5,7 +5,7 @@
 
 	{% if linkType != 'none' %}
 	    {% if linkType == 'page' %}
-	        {% set link = path('victoire_core_page_show', {'url' : relatedPage.url}) %}
+	        {% set link = path('victoire_core_page_show', {'url' : page.url}) %}
 	        {% set target = '_parent' %}
 	    {% else %}
 	        {% set link = url %}
