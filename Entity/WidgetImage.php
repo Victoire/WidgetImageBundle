@@ -32,6 +32,15 @@ class WidgetImage extends Widget
      * @VIC\ReceiverProperty("textable")
      */
     protected $alt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="legend", type="string", length=255, nullable=true)
+     * @VIC\ReceiverProperty("textable")
+     */
+    protected $legend;
+
     /**
      * @var string
      *
@@ -119,6 +128,7 @@ class WidgetImage extends Widget
     {
         return $this->alt;
     }
+
     /**
      * Set title
      * @param string $title
@@ -140,6 +150,29 @@ class WidgetImage extends Widget
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set legend
+     * @param string $legend
+     *
+     * @return WidgetImage
+     */
+    public function setLegend($legend)
+    {
+        $this->legend = $legend;
+
+        return $this;
+    }
+
+    /**
+     * Get legend
+     *
+     * @return string
+     */
+    public function getLegend()
+    {
+        return $this->legend;
     }
 
     /**

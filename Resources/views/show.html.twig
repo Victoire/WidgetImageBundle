@@ -19,6 +19,9 @@
 	  {% if (entity != null or mode == 'static') %}
 	  	{# TODO Use imagine to generate small pictures image|vic_imagine_filter(mode|default('inset'), width, height) #}
 	     <img src="{{ image.url }}" title="{{ title }}" alt="{{ alt }}" style="{% if width %}width: {{ width }}; {% endif %}{% if height %}height: {{ height }};{% endif %}"{% if width %} width="{{ width }}"{% endif %}{% if height %} height="{{ height }}"{% endif %}/>
+	     {% if legend is defined %}
+	     	<legend>{{ legend }}</legend>
+	     {% endif %}
 	  {% else %}
 	   {{ image.url }}
 	{% endif %}

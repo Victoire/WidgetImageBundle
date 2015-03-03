@@ -15,6 +15,7 @@
             </div>
         </div>
         {{ form_row(form.alt) }}
+        {{ form_row(form.legend) }}
         {{ form_row(form.title) }}
         {{ form_row(form.linkType) }}
         <div class="vic-linkType vic-linkType-url{% if form.vars.value.linkType != "url" %} vic-hidden{% endif %}">

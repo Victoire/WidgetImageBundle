@@ -48,6 +48,13 @@ class WidgetImageType extends WidgetType
                     )
                 )
                 ->add(
+                    'legend',
+                    null,
+                    array(
+                        'label' => 'widget_image.form.legend.label'
+                    )
+                )
+                ->add(
                     'url',
                     null,
                     array(
