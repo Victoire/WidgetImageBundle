@@ -15,6 +15,7 @@ use Victoire\Bundle\MediaBundle\Entity\Media;
  */
 class WidgetImage extends Widget
 {
+    use \Victoire\Bundle\WidgetBundle\Entity\Traits\LinkTrait;
     /**
      * @var string
      *
@@ -49,12 +50,6 @@ class WidgetImage extends Widget
      */
     protected $title;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="link_type", type="string", length=255)
-     */
-    protected $linkType;
 
     /**
      * @var string
@@ -71,14 +66,9 @@ class WidgetImage extends Widget
     protected $height;
 
     /**
-     * @var string
+     * Deprecated, this field is now "page"
+     * we keep this field to avoid BC break
      *
-     * @ORM\Column(name="url", type="string", length=255, nullable=true)
-     * @VIC\ReceiverProperty("textable")
-     */
-    protected $url;
-
-    /**
      * @ORM\ManyToOne(targetEntity="Victoire\Bundle\PageBundle\Entity\Page")
      * @ORM\JoinColumn(name="related_page_id", referencedColumnName="id", onDelete="cascade", nullable=true)
      */
@@ -268,26 +258,26 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set related_page
-     * @param Page $relatedPage
-     *
-     * @return Menu
-     */
-    public function setRelatedPage(Page $relatedPage = null)
-    {
-        $this->relatedPage = $relatedPage;
-
-        return $this;
-    }
-
-    /**
-     * Get related_page
      *
      * @return Page
      */
     public function getRelatedPage()
     {
         return $this->relatedPage;
+    }
+    
+    /**
+     * Legacy support
+     *
+     * @return Page
+     */
+    public function getPage()
+    {
+        if ($this->relatedPage != null) {
+            return $this->relatedPage;
+        }
+
+        return $this->page;
     }
 
     /**
