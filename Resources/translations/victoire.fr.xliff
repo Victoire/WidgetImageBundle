@@ -90,6 +90,10 @@
         <source>widget_image.form.url.label</source>
         <target>Url</target>
       </trans-unit>
+      <trans-unit id="fdsfd7fd0cc9ab6faaeccc5cd8fds" resname="widget_image.form.lazyLoad.label">
+        <source>widget_image.form.lazyLoad.label</source>
+        <target>Charger l'image en mode "économique" (plus rapide, en second temps)</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
