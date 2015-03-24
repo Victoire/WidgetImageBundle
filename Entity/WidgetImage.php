@@ -50,7 +50,6 @@ class WidgetImage extends Widget
      */
     protected $title;
 
-
     /**
      * @var string
      *
@@ -64,6 +63,11 @@ class WidgetImage extends Widget
      * @ORM\Column(name="height", type="string", length=255, nullable=true)
      */
     protected $height;
+
+    /**
+     * @ORM\Column(name="lazy_load", type="boolean", nullable=true)
+     */
+    protected $lazyLoad = true;
 
     /**
      * Deprecated, this field is now "page"
@@ -265,7 +269,7 @@ class WidgetImage extends Widget
     {
         return $this->relatedPage;
     }
-    
+
     /**
      * Legacy support
      *
@@ -296,5 +300,28 @@ class WidgetImage extends Widget
         }
 
         return $url;
+    }
+
+    /**
+     * Get lazyLoad
+     *
+     * @return string
+     */
+    public function getLazyLoad()
+    {
+        return $this->lazyLoad;
+    }
+
+    /**
+     * Set lazyLoad
+     * @param string $lazyLoad
+     *
+     * @return $this
+     */
+    public function setLazyLoad($lazyLoad)
+    {
+        $this->lazyLoad = $lazyLoad;
+
+        return $this;
     }
 }

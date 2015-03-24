@@ -28,7 +28,7 @@ class WidgetImageType extends WidgetType
                     'image',
                     'media',
                     array(
-                        'label' => 'widget_image.form.image.label'
+                        'label' => 'widget_image.form.image.label',
                     )
                 )
                 ->add(
@@ -43,14 +43,14 @@ class WidgetImageType extends WidgetType
                     'title',
                     null,
                     array(
-                        'label' => 'widget_image.form.title.label'
+                        'label' => 'widget_image.form.title.label',
                     )
                 )
                 ->add(
                     'legend',
                     null,
                     array(
-                        'label' => 'widget_image.form.legend.label'
+                        'label' => 'widget_image.form.legend.label',
                     )
                 )
                 ->add(
@@ -70,7 +70,15 @@ class WidgetImageType extends WidgetType
                     )
                 )
                 ->add('link', 'victoire_link')
-                ;
+                ->add(
+                    'lazyLoad',
+                    null,
+                    array(
+                        'label'          => 'widget_image.form.lazyLoad.label',
+                        'vic_help_label' => 'widget_image.form.lazyLoad.help_label',
+                        'required'       => false,
+                    )
+                );
         }
         parent::buildForm($builder, $options);
     }
@@ -87,7 +95,7 @@ class WidgetImageType extends WidgetType
             array(
                 'data_class'         => 'Victoire\Widget\ImageBundle\Entity\WidgetImage',
                 'widget'             => 'Image',
-                'translation_domain' => 'victoire'
+                'translation_domain' => 'victoire',
             )
         );
     }
