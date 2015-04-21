@@ -1,5 +1,5 @@
 {
-    "name": "appventus/image-widget",
+    "name": "friendsofvictoire/image-widget",
     "type": "symfony-bundle",
     "description": "Victoire Cms Image component",
     "keywords": ["cms", "victoire", "image"],
