@@ -3,15 +3,8 @@
 
 {% block content %}
 
-    {% if linkType != 'none' %}
-        {% if linkType == 'page' %}
-            {% set link = path('victoire_core_page_show', {'url' : page.url}) %}
-            {% set target = '_parent' %}
-        {% else %}
-            {% set link = url %}
-            {% set target = '_blank' %}
-        {% endif %}
-            <a href="{{ link }}" target="{{ target }}">
+    {% if link.linkType != 'none' %}
+        <a href="{{ vic_link_url(link.parameters) }}" target="{{ link.target }}" title="{{ title }}">
     {% endif %}
     {% if image.url == null %}
        {{ 'The image was not found'|trans }}
@@ -24,7 +17,6 @@
             {% else %}
             src="{{ image.url }}"
             {% endif %}
-            title="{{ title }}"
             alt="{{ alt }}"
             style="{% if width %}width: {{ width }}; {% endif %}{% if height %}height: {{ height }};{% endif %}"{% if width %}
             width="{{ width }}"{% endif %}{% if height %}
