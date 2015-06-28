@@ -10,17 +10,18 @@
        {{ 'The image was not found'|trans }}
     {% else %}
       {% if (entity != null or mode == 'static') %}
-         <img 
-            {% if widget.lazyLoad %}
-            src="/bundles/victoirewidgetimage/images/placeholder.png"
-            data-src="{{ image.url }}"
-            {% else %}
-            src="{{ image.url }}"
-            {% endif %}
-            alt="{{ alt }}"
-            style="{% if width %}width: {{ width }}; {% endif %}{% if height %}height: {{ height }};{% endif %}"{% if width %}
-            width="{{ width }}"{% endif %}{% if height %}
-            height="{{ height }}"{% endif %}/>
+         <img
+                 {% if widget.lazyLoad %}
+                     src="/bundles/victoirewidgetimage/images/placeholder.png"
+                     data-src="{{ image.url }}"
+                 {% else %}
+                     src="{{ image.url }}"
+                 {% endif %}
+                 alt="{{ alt }}"
+                 style="{% if width %}width: {{ width }}; {% endif %}{% if height %}height: {{ height }};{% endif %}"
+                 {% if width %}width="{{ width }}"{% endif %}
+                 {% if height %}height="{{ height }}"{% endif %}
+                 />
          {% if legend != '' %}
             <legend>{{ legend }}</legend>
          {% endif %}
@@ -30,7 +31,7 @@
 
     {% endif %}
 
-    {% if linkType != 'none' %}
+    {% if link.linkType != 'none' %}
     </a>
     {% endif %}
 
