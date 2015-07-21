@@ -6,7 +6,7 @@
     {% if link.linkType is defined and link.linkType != 'none' %}
         <a href="{{ vic_link_url(link.parameters) }}" target="{{ link.target }}" title="{{ title }}">
     {% endif %}
-    {% if image.url == null %}
+    {% if image.url is not defined or image.url == null %}
        {{ 'The image was not found'|trans }}
     {% else %}
       {% if (entity != null or mode == 'static') %}
