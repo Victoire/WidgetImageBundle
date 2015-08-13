@@ -5,6 +5,7 @@ namespace Victoire\Widget\ImageBundle\Form;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
+use Victoire\Bundle\WidgetBundle\Model\Widget;
 
 /**
  * WidgetImage form type
@@ -19,10 +20,7 @@ class WidgetImageType extends WidgetType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $entityName = $options['entityName'];
-
-        //no entity name provided in case of static mode for example
-        if ($entityName === null) {
+        if ($options['mode'] === null || $options['mode'] === Widget::MODE_STATIC) {
             $builder
                 ->add(
                     'image',
