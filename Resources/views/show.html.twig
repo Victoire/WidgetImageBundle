@@ -3,6 +3,7 @@
 
 {% block content %}
 
+{% if not widget.isCover %}
     {% if link.linkType is defined and link.linkType != 'none' %}
         <a href="{{ vic_link_url(link.parameters) }}" target="{{ link.target }}" title="{{ title }}">
     {% endif %}
@@ -33,5 +34,14 @@
     {% if link.linkType is defined and link.linkType != 'none' %}
     </a>
     {% endif %}
+{% else %}
+    {% if image.url is defined and image.url != null) %}
+        {% set background = "background-image: url(" ~ image.url ~ ");" %}
+    {% endif %}
+
+    <div class="cover" style="{{ background }}{% if height %}min-height: {{ height|replace({'px': ''}) }}px;{% endif %}">
+        {{ cms_slot_widgets('img_cover' ~ widget.id) }}
+    </div>
+{% endif %}
 
 {% endblock content %}

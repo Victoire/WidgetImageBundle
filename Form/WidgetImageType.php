@@ -3,6 +3,9 @@
 namespace Victoire\Widget\ImageBundle\Form;
 
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 use Victoire\Bundle\WidgetBundle\Model\Widget;
@@ -30,6 +33,63 @@ class WidgetImageType extends WidgetType
                     )
                 )
                 ->add(
+                    'cover',
+                    null,
+                    array(
+                        'label'          => 'widget_image.form.cover.label',
+                        'required'       => false,
+                        'attr' => array(
+                            'data-refreshOnChange' => "true",
+                        )
+                    )
+                );
+
+            $builder->addEventListener(
+                FormEvents::PRE_SET_DATA,
+                function(FormEvent $event) {
+                    self::manageCoverRelativeFields($event->getForm(), $event->getData()->isCover());
+                }
+            );
+
+            $builder->addEventListener(
+                FormEvents::PRE_SUBMIT,
+                function(FormEvent $event) {
+                    $data = $event->getData();
+                    $cover = isset($data['cover']) ? $data['cover'] : false;
+                    self::manageCoverRelativeFields($event->getForm(), $cover);
+                }
+            );
+
+
+        }
+        parent::buildForm($builder, $options);
+    }
+
+    /*
+     * Disable orderBy field if random checkbox is checked
+     */
+    protected function manageCoverRelativeFields(FormInterface $form, $isCover)
+    {
+        switch ($isCover) {
+            case true:
+                $form->remove('alt')
+                    ->remove('title')
+                    ->remove('legend')
+                    ->remove('width')
+                    ->add(
+                        'height',
+                        null,
+                        array(
+                            'label' => 'widget_image.form.minHeight.label',
+                            'vic_help_label' => 'widget_image.form.height.help_label',
+                        )
+                    )
+                    ->remove('link')
+                    ->remove('asynchronous')
+                    ->remove('lazyLoad');
+                break;
+            default:
+                $form->add(
                     'alt',
                     null,
                     array(
@@ -77,12 +137,11 @@ class WidgetImageType extends WidgetType
                         'required'       => false,
                     )
                 );
+                break;
         }
-        parent::buildForm($builder, $options);
     }
 
     /**
-     * bind form to WidgetRedactor entity
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
