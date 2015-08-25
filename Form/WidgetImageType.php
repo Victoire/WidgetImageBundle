@@ -32,6 +32,10 @@ class WidgetImageType extends WidgetType
                         'label' => 'widget_image.form.image.label',
                     )
                 )
+                ->add('opacity', null, array(
+                        'label' => 'widget_image.form.opacity.label',
+                        'vic_help_block' => 'widget_image.form.opacity.help_block'
+                    ))
                 ->add(
                     'cover',
                     null,
@@ -90,53 +94,53 @@ class WidgetImageType extends WidgetType
                 break;
             default:
                 $form->add(
-                    'alt',
-                    null,
-                    array(
-                        'label' => 'widget_image.form.alt.label',
-                        'vic_help_label' => 'widget_image.form.alt.help_label',
+                        'alt',
+                        null,
+                        array(
+                            'label' => 'widget_image.form.alt.label',
+                            'vic_help_label' => 'widget_image.form.alt.help_label',
+                        )
                     )
-                )
-                ->add(
-                    'title',
-                    null,
-                    array(
-                        'label' => 'widget_image.form.title.label',
+                    ->add(
+                        'title',
+                        null,
+                        array(
+                            'label' => 'widget_image.form.title.label',
+                        )
                     )
-                )
-                ->add(
-                    'legend',
-                    null,
-                    array(
-                        'label' => 'widget_image.form.legend.label',
+                    ->add(
+                        'legend',
+                        null,
+                        array(
+                            'label' => 'widget_image.form.legend.label',
+                        )
                     )
-                )
-                ->add(
-                    'width',
-                    null,
-                    array(
-                        'label' => 'widget_image.form.width.label',
-                        'vic_help_label' => 'widget_image.form.width.help_label',
+                    ->add(
+                        'width',
+                        null,
+                        array(
+                            'label' => 'widget_image.form.width.label',
+                            'vic_help_label' => 'widget_image.form.width.help_label',
+                        )
                     )
-                )
-                ->add(
-                    'height',
-                    null,
-                    array(
-                        'label' => 'widget_image.form.height.label',
-                        'vic_help_label' => 'widget_image.form.width.help_label',
+                    ->add(
+                        'height',
+                        null,
+                        array(
+                            'label' => 'widget_image.form.height.label',
+                            'vic_help_label' => 'widget_image.form.width.help_label',
+                        )
                     )
-                )
-                ->add('link', 'victoire_link')
-                ->add(
-                    'lazyLoad',
-                    null,
-                    array(
-                        'label'          => 'widget_image.form.lazyLoad.label',
-                        'vic_help_label' => 'widget_image.form.lazyLoad.help_label',
-                        'required'       => false,
-                    )
-                );
+                    ->add('link', 'victoire_link')
+                    ->add(
+                        'lazyLoad',
+                        null,
+                        array(
+                            'label'          => 'widget_image.form.lazyLoad.label',
+                            'vic_help_label' => 'widget_image.form.lazyLoad.help_label',
+                            'required'       => false,
+                        )
+                    );
                 break;
         }
     }

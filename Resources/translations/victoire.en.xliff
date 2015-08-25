@@ -8,15 +8,7 @@
     <body>
       <trans-unit id="c1441cce8cb58155f1fd93cd2e44447b17fc0cb3" resname="The image was not found">
         <source>The image was not found</source>
-        <target>L'image n'a pas été trouvée</target>
-      </trans-unit>
-      <trans-unit id="26f98005f60c6a43692956117a07223c2eb40657" resname="entity_proxy.form.product.label">
-        <source>entity_proxy.form.product.label</source>
-        <target>Entité</target>
-      </trans-unit>
-      <trans-unit id="06e79d90f7967e020d62c116746a34476e947e30" resname="form.widget.tab.product.label">
-        <source>form.widget.tab.product.label</source>
-        <target>Entité</target>
+        <target>Image not found</target>
       </trans-unit>
       <trans-unit id="fdf8cef40c0b48030efaaf9996eb9def4423ad50" resname="modal.form.widget.type.image.label">
         <source>modal.form.widget.type.image.label</source>
@@ -28,7 +20,7 @@
       </trans-unit>
       <trans-unit id="af01a506e6c6f85d26ed4dad3b451a6c75cd66a5" resname="widget_image.form.alt.label">
         <source>widget_image.form.alt.label</source>
-        <target>Texte alternatif</target>
+        <target>Alternative text</target>
       </trans-unit>
       <trans-unit id="b4a7991f916e1ad08623059b72f28c1ebff3eca9" resname="widget_image.form.image.label">
         <source>widget_image.form.image.label</source>
@@ -36,59 +28,31 @@
       </trans-unit>
       <trans-unit resname="widget_image.form.width.label">
         <source>widget_image.form.width.label</source>
-        <target>Largeur</target>
+        <target>Width</target>
       </trans-unit>
       <trans-unit resname="widget_image.form.height.label">
         <source>widget_image.form.height.label</source>
-        <target>Hauteur</target>
-      </trans-unit>
-      <trans-unit resname="widget_image.form.minHeight.label">
-        <source>widget_image.form.minHeight.label</source>
-        <target>Hauteur minimale</target>
+        <target>Height</target>
       </trans-unit>
       <trans-unit resname="widget_image.form.width.help_label">
         <source>widget_image.form.width.help_label</source>
-        <target>en pixels</target>
+        <target>pixels</target>
       </trans-unit>
       <trans-unit resname="widget_image.form.height.help_label">
         <source>widget_image.form.height.help_label</source>
-        <target>en pixels</target>
+        <target>pixels</target>
       </trans-unit>
       <trans-unit resname="widget_image.form.alt.help_label">
         <source>widget_image.form.alt.help_label</source>
-        <target>utilisé pour définir l'image aux yeux des moteurs de recherche</target>
-      </trans-unit>
-      <trans-unit id="7b271405f12b075445b4f28ddeeead3dacdd0464" resname="widget_image.form.linkType.label">
-        <source>widget_image.form.linkType.label</source>
-        <target>Type de lien</target>
-      </trans-unit>
-      <trans-unit id="eb99db122bd6c6fb99f36a92275f18125550e916" resname="widget_image.form.linkType.nolink.choice">
-        <source>widget_image.form.linkType.nolink.choice</source>
-        <target>Aucun lien</target>
-      </trans-unit>
-      <trans-unit id="3ecdf4671487abd48d63bf2a9a78c11915e3edf4" resname="widget_image.form.linkType.page.choice">
-        <source>widget_image.form.linkType.page.choice</source>
-        <target>Page interne</target>
-      </trans-unit>
-      <trans-unit id="9a75f6c811e139706d97d6360e3d9382de396c8d" resname="widget_image.form.linkType.url.choice">
-        <source>widget_image.form.linkType.url.choice</source>
-        <target>Lien externe</target>
-      </trans-unit>
-      <trans-unit id="90349a0a9d4a6f49eeaa02745e89d0619abe2187" resname="widget_image.form.page.empty_value">
-        <source>widget_image.form.page.empty_value</source>
-        <target>Choisissez une page dans la liste</target>
-      </trans-unit>
-      <trans-unit id="24cedb6930b32bc8bca53c0aa7ae8251abb17cf8" resname="widget_image.form.page.label">
-        <source>widget_image.form.page.label</source>
-        <target>Page interne</target>
+        <target>used to describe the picture to the search engines</target>
       </trans-unit>
       <trans-unit id="034279e2d5a13215c1721b1a6fa8866309e011bd" resname="widget_image.form.title.label">
         <source>widget_image.form.title.label</source>
-        <target>Texte au survol</target>
+        <target>Hover text</target>
       </trans-unit>
       <trans-unit id="5c1721b1a6fa8866309e011bd034279e2d5a1321" resname="widget_image.form.legend.label">
         <source>widget_image.form.legend.label</source>
-        <target>Légende</target>
+        <target>Legend</target>
       </trans-unit>
       <trans-unit id="7ca4f2fefa19fd0cc9ab6faaeccc5cde79b3eb88" resname="widget_image.form.url.label">
         <source>widget_image.form.url.label</source>
@@ -96,19 +60,19 @@
       </trans-unit>
       <trans-unit id="fdsfd7fd0cc9ab6faaeccc5cd8fds" resname="widget_image.form.lazyLoad.label">
         <source>widget_image.form.lazyLoad.label</source>
-        <target>Charger l'image en mode "économique" (plus rapide, dans un second temps)</target>
+        <target>Load image in eco mode (faster because in a second time)</target>
       </trans-unit>
       <trans-unit id="a19faaec9b3eb88cc5cde7fd0cc9ab67ca4f2fef" resname="widget_image.form.cover.label">
         <source>widget_image.form.cover.label</source>
-        <target>Utiliser l'image en arrière plan et activer du contenu secondaire</target>
+        <target>Use the image in background and enable secondary hover content</target>
       </trans-unit>
       <trans-unit resname="widget_image.form.opacity.label">
         <source>widget_image.form.opacity.label</source>
-        <target>Opacité</target>
+        <target>Opacity</target>
       </trans-unit>
       <trans-unit resname="widget_image.form.opacity.help_block">
         <source>widget_image.form.opacity.help_block</source>
-        <target>Pour une opacité à 50%, saisir: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))</target>
+        <target>For an 50% opacity, enter: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))</target>
       </trans-unit>
     </body>
   </file>

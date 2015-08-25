@@ -38,10 +38,12 @@
             {{ form_widget(form.link) }}
             {{ form_widget(form.asynchronous) }}
             {{ form_widget(form.lazyLoad) }}
+            {{ form_row(form.opacity) }}
         </div>
         {% else %}
         <div class="vic-col-sm-4">
             {{ form_row(form.height) }}
+            {{ form_row(form.opacity) }}
         </div>
         {% endif %}
     </div>

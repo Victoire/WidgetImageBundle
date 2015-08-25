@@ -12,7 +12,7 @@
     {% else %}
         {% if (entity != null or mode == 'static') %}
             <img
-                {% if widget.lazyLoad %}
+                {% if widget.lazyLoad == true and not app.request.isXmlHttpRequest() %}
                     src="/bundles/victoirewidgetimage/images/placeholder.png"
                     data-src="{{ image.url }}"
                 {% else %}
@@ -35,8 +35,12 @@
     </a>
     {% endif %}
 {% else %}
-    {% if image.url is defined and image.url != null) %}
-        {% set background = "background-image: url(" ~ image.url ~ ");" %}
+    {% if image.url is defined and image.url != null %}
+        {% set background = "background-image: " %}
+        {% if opacity is not null %}
+            {% set background = background ~ opacity ~ ", " %}
+        {% endif %}
+        {% set background = background ~ "url(" ~ image.url ~ ");" %}
     {% endif %}
 
     <div class="cover" style="{{ background }}{% if height %}min-height: {{ height|replace({'px': ''}) }}px;{% endif %}">

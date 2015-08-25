@@ -74,6 +74,14 @@ class WidgetImage extends Widget
      */
     protected $cover = true;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="opacity", type="string", length=255, nullable=true)
+     */
+    protected $opacity;
+
+    /**
      * @deprecated, this field is now "page"
      * we keep this field to avoid BC break
      *
@@ -325,6 +333,50 @@ class WidgetImage extends Widget
     public function setLazyLoad($lazyLoad)
     {
         $this->lazyLoad = $lazyLoad;
+
+        return $this;
+    }
+
+    /**
+     * @param bool $cover
+     *
+     * @return WidgetImage
+     */
+    public function setCover($cover)
+    {
+        $this->cover = $cover;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCover()
+    {
+        return $this->cover;
+    }
+
+    /**
+     * Get opacity
+     *
+     * @return string
+     */
+    public function getOpacity()
+    {
+        return $this->opacity;
+    }
+
+    /**
+     * Set opacity
+     *
+     * @param string $opacity
+     *
+     * @return $this
+     */
+    public function setOpacity($opacity)
+    {
+        $this->opacity = $opacity;
 
         return $this;
     }
