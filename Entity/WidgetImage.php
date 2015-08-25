@@ -72,7 +72,7 @@ class WidgetImage extends Widget
     /**
      * @ORM\Column(name="cover", type="boolean", nullable=true)
      */
-    protected $cover = true;
+    protected $cover = false;
 
     /**
      * @var integer
