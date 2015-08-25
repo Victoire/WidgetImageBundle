@@ -4,12 +4,19 @@
 <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
     {{ form_start(form) }}
 
+
     <div class="row">
-        <div class="vic-col-sm-4">
+        <div class="vic-col-sm-8 vic-pull-right vic-text-center ">
+            {{ form_widget(form.cover) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="{% if not form.cover.vars.data %}vic-col-sm-4{% else %}vic-col-sm-8{% endif %}">
             {{ form_widget(form.image) }}
             {{ form_errors(form.image) }}
         </div>
 
+        {% if not form.cover.vars.data %}
         <div class="vic-col-sm-4">
             <div class="row">
                 <div class="vic-col-sm-6">
@@ -29,7 +36,14 @@
 
         <div class="vic-col-sm-4">
             {{ form_widget(form.link) }}
+            {{ form_widget(form.asynchronous) }}
+            {{ form_widget(form.lazyLoad) }}
         </div>
+        {% else %}
+        <div class="vic-col-sm-4">
+            {{ form_row(form.height) }}
+        </div>
+        {% endif %}
     </div>
 
     {{ form_rest(form) }}

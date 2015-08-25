@@ -70,7 +70,11 @@ class WidgetImage extends Widget
     protected $lazyLoad = true;
 
     /**
-     * Deprecated, this field is now "page"
+     * @ORM\Column(name="cover", type="boolean", nullable=true)
+     */
+    protected $cover = true;
+
+     * @deprecated, this field is now "page"
      * we keep this field to avoid BC break
      *
      * @ORM\ManyToOne(targetEntity="Victoire\Bundle\PageBundle\Entity\Page")

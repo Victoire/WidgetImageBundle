@@ -93,6 +93,10 @@
       <trans-unit id="fdsfd7fd0cc9ab6faaeccc5cd8fds" resname="widget_image.form.lazyLoad.label">
         <source>widget_image.form.lazyLoad.label</source>
         <target>Charger l'image en mode "économique" (plus rapide, en second temps)</target>
+      <trans-unit id="a19faaec9b3eb88cc5cde7fd0cc9ab67ca4f2fef" resname="widget_image.form.cover.label">
+        <source>widget_image.form.cover.label</source>
+        <target>Utiliser l'image en arrière plan et activer du contenu secondaire</target>
+      </trans-unit>
       </trans-unit>
     </body>
   </file>
