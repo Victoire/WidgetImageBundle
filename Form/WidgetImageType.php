@@ -55,12 +55,10 @@ class WidgetImageType extends WidgetType
                 }
             );
 
-            $builder->addEventListener(
+            $builder->get('cover')->addEventListener(
                 FormEvents::PRE_SUBMIT,
                 function(FormEvent $event) {
-                    $data = $event->getData();
-                    $cover = isset($data['cover']) ? $data['cover'] : false;
-                    self::manageCoverRelativeFields($event->getForm(), $cover);
+                    self::manageCoverRelativeFields($event->getForm()->getParent(), (bool) $event->getData());
                 }
             );
 
@@ -140,7 +138,10 @@ class WidgetImageType extends WidgetType
                             'vic_help_label' => 'widget_image.form.lazyLoad.help_label',
                             'required'       => false,
                         )
-                    );
+                    )->add('asynchronous', null, array(
+                            'label'    => 'victoire.widget.type.asynchronous.label',
+                            'required' => false
+                        ));
                 break;
         }
     }
