@@ -44,7 +44,7 @@
     {% endif %}
 
     <div class="cover" style="{{ background }}{% if height %}min-height: {{ height|replace({'px': ''}) }}px;{% endif %}">
-        {{ cms_slot_widgets('img_cover' ~ widget.id) }}
+        {{ cms_slot_widgets('img_cover' ~ widget.childrenSlot) }}
     </div>
 {% endif %}
 
