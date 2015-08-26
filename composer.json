@@ -16,9 +16,6 @@
         "symfony/framework-bundle"            : "~2.3",
         "victoire/victoire"                   : "dev-master"
     },
-    "replace": {
-        "friendsofvictoire/cover-widget": "dev-master"
-    },
     "autoload": {
         "psr-0": { "Victoire\\Widget\\ImageBundle": "" }
     },
