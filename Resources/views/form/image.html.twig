@@ -1,0 +1,5 @@
+{{ form_row(form.imageTheme) }}
+{{ form_row(form.image) }}
+{% if imageTheme != "cover" %}
+    {{ form_row(form.lazyLoad) }}
+{% endif %}

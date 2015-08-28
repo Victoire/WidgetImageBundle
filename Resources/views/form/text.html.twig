@@ -1,0 +1,21 @@
+{% set col = {
+    cover:   "hidden",
+    popover: "col-md-4",
+    default: "col-md-12"
+} %}
+{% if imageTheme != "cover" %}
+    <div class="col-ms-12 {{ attribute(col, imageTheme) }}">
+        {{ form_row(form.alt) }}
+    </div>
+    <div class="col-ms-12 {{ attribute(col, imageTheme) }}">
+        {{ form_row(form.title) }}
+    </div>
+    <div class="col-ms-12 {{ attribute(col, imageTheme) }}">
+        {{ form_row(form.legend) }}
+    </div>
+    {% if imageTheme == "popover" %}
+        <div class="col-ms-12">
+            {{ form_row(form.popover) }}
+        </div>
+    {% endif %}
+{% endif %}

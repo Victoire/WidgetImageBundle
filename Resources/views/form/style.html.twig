@@ -1,0 +1,21 @@
+{% set col = {
+    cover:   {width: "hidden",   height: "col-md-12", opacity: "col-md-12", placement: "hidden"},
+    popover: {width: "col-md-6", height: "col-md-6",  opacity: "col-md-6",  placement: "col-md-6"},
+    default: {width: "col-md-3", height: "col-md-3",  opacity: "col-md-3",  placement: "col-md-3"}
+} %}
+{% if imageTheme != "cover" %}
+    <div class="col-sm-12 {{ attribute(col, imageTheme).width }}">
+        {{ form_row(form.width) }}
+    </div>
+{% endif %}
+<div class="col-sm-12 {{ attribute(col, imageTheme).height }}">
+    {{ form_row(form.height) }}
+</div>
+<div class="col-sm-12 {{ attribute(col, imageTheme).opacity }}">
+    {{ form_row(form.opacity) }}
+</div>
+{% if imageTheme == "popover" %}
+    <div class="col-sm-12 {{ attribute(col, imageTheme).placement }}">
+        {{ form_row(form.placement) }}
+    </div>
+{% endif %}

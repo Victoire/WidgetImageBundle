@@ -3,52 +3,36 @@
 {% block form_static %}
 <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
     {{ form_start(form) }}
-
-
+    {% set imageTheme = form.imageTheme.vars.data|default('default') %}
+    {% set base = {
+        'default' : {left: 'col-md-4', right: 'col-md-8'},
+        'cover'   : {left: 'col-md-8', right: 'col-md-4'},
+        'popover' : {left: 'col-md-3', right: 'col-md-9'}
+    } %}
     <div class="row">
-        <div class="vic-col-sm-8 vic-pull-right vic-text-center ">
-            {{ form_widget(form.cover) }}
+        <div class="col-ms-12 {{ attribute(base, imageTheme).left }}">
+            {% include 'VictoireWidgetImageBundle:form:image.html.twig' %}
         </div>
-    </div>
-    <div class="row">
-        <div class="{% if not form.cover.vars.data %}vic-col-sm-4{% else %}vic-col-sm-8{% endif %}">
-            {{ form_widget(form.image) }}
-            {{ form_errors(form.image) }}
-        </div>
-
-        {% if not form.cover.vars.data %}
-        <div class="vic-col-sm-4">
-            <div class="row">
-                <div class="vic-col-sm-6">
-                    {{ form_row(form.width) }}
-                </div>
-
-                <div class="vic-col-sm-6">
-                    {{ form_row(form.height) }}
-                </div>
+        <div class="col-ms-12 {{ attribute(base, imageTheme).right }}">
+            {% set layout = {
+                'default' : {text: 'col-md-6',  link: 'col-md-6', style: 'col-md-12'},
+                'cover'   : {text: 'hidden',    link: 'hidden',   style: 'col-md-12'},
+                'popover' : {text: 'col-md-12', link: 'col-md-4', style: 'col-md-8'}
+            } %}
+            <div class="col-ms-12 {{ attribute(layout, imageTheme).text }}">
+                {% include 'VictoireWidgetImageBundle:form:text.html.twig' %}
             </div>
-
-            {{ form_row(form.alt) }}
-
-            {{ form_row(form.title) }}
-            {{ form_row(form.legend) }}
+            <div class="col-ms-12 {{ attribute(layout, imageTheme).link }}">
+                {% include 'VictoireWidgetImageBundle:form:link.html.twig' %}
+            </div>
+            <div class="col-ms-12 {{ attribute(layout, imageTheme).style }}">
+                {% include 'VictoireWidgetImageBundle:form:style.html.twig' %}
+            </div>
         </div>
-
-        <div class="vic-col-sm-4">
-            {{ form_widget(form.link) }}
-            {{ form_widget(form.lazyLoad) }}
-            {{ form_row(form.opacity) }}
-            {{ form_widget(form.asynchronous) }}
+        <div class="col-sm-12">
+            {{ form_rest(form) }}
         </div>
-        {% else %}
-        <div class="vic-col-sm-4">
-            {{ form_row(form.height) }}
-            {{ form_row(form.opacity) }}
-        </div>
-        {% endif %}
     </div>
-
-    {{ form_rest(form) }}
     {{ form_end(form) }}
 </div>
 {% endblock form_static %}
@@ -62,6 +46,12 @@
             $vic('.vic-linkType-url').removeClass('vic-hidden');
         } else if ($vic(this).val() == 'page') {
             $vic('.vic-linkType-page').removeClass('vic-hidden');
+        }
+    });
+
+    $vic(document).on('victoire_widget_form_create_presubmit victoire_widget_form_update_presubmit', function(event) {
+        for ( instance in CKEDITOR.instances ) {
+            CKEDITOR.instances[instance].updateElement();
         }
     });
 </script>
