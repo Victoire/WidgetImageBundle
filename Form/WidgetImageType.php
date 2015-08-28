@@ -25,40 +25,30 @@ class WidgetImageType extends WidgetType
     {
         if ($options['mode'] === null || $options['mode'] === Widget::MODE_STATIC) {
             $builder
-                ->add(
-                    'image',
-                    'media',
-                    array(
-                        'label' => 'widget_image.form.image.label',
-                    )
-                )
-                ->add('opacity', null, array(
-                        'label' => 'widget_image.form.opacity.label',
-                        'vic_help_block' => 'widget_image.form.opacity.help_block'
-                    ))
-                ->add(
-                    'cover',
-                    null,
-                    array(
-                        'label'          => 'widget_image.form.cover.label',
-                        'required'       => false,
-                        'attr' => array(
-                            'data-refreshOnChange' => "true",
-                        )
-                    )
-                );
+                ->add('imageTheme', 'choice', [
+                    'label'          => 'widget_image.form.theme.label',
+                    'attr' => [
+                        'data-refreshOnChange' => "true",
+                    ],
+                    'choices' => [
+                        'default' => 'widget_image.form.default',
+                        'cover' => 'widget_image.form.cover',
+                        'popover' => 'widget_image.form.popover',
+                    ],
+                ])
+            ;
 
             $builder->addEventListener(
                 FormEvents::PRE_SET_DATA,
                 function(FormEvent $event) {
-                    self::manageCoverRelativeFields($event->getForm(), $event->getData()->isCover());
+                    self::manageRelativeFields($event->getForm(), $event->getData()->getImageTheme());
                 }
             );
 
-            $builder->get('cover')->addEventListener(
+            $builder->get('imageTheme')->addEventListener(
                 FormEvents::PRE_SUBMIT,
                 function(FormEvent $event) {
-                    self::manageCoverRelativeFields($event->getForm()->getParent(), (bool) $event->getData());
+                    self::manageRelativeFields($event->getForm()->getParent(), (string) $event->getData());
                 }
             );
 
@@ -67,81 +57,83 @@ class WidgetImageType extends WidgetType
         parent::buildForm($builder, $options);
     }
 
-    /*
-     * Disable orderBy field if random checkbox is checked
-     */
-    protected function manageCoverRelativeFields(FormInterface $form, $isCover)
+    protected function generateDefaultFields(FormInterface $form) {
+        $form
+            ->add('image', 'media', [
+                'label' => 'widget_image.form.image.label',
+            ])
+            ->add('lazyLoad', null, [
+                'label' => 'widget_image.form.lazyLoad.label',
+            ])
+            ->add('alt', null, [
+                'label' => 'widget_image.form.alt.label',
+            ])
+            ->add('title', null, [
+                'label' => 'widget_image.form.title.label',
+            ])
+            ->add('legend', null, [
+                'label' => 'widget_image.form.legend.label',
+            ])
+            ->add('link', 'victoire_link', [
+                'label'          => 'widget_image.form.lazyLoad.label',
+                'vic_help_label' => 'widget_image.form.lazyLoad.help_label',
+                'required'       => false,
+            ])
+            ->add('width', null, [
+                'label' => 'widget_image.form.width.label',
+                'vic_help_label' => 'widget_image.form.width.help_label',
+            ])
+            ->add('height', null, [
+                'label' => 'widget_image.form.height.label',
+                'vic_help_label' => 'widget_image.form.width.help_label',
+            ])
+            ->add('opacity', null, [
+                'label' => 'widget_image.form.opacity.label',
+                'vic_help_block' => 'widget_image.form.opacity.help_block'
+            ])
+        ;
+    }
+
+    protected function manageRelativeFields(FormInterface $form, $themeImage)
     {
-        switch ($isCover) {
-            case true:
-                $form->remove('alt')
+        switch ($themeImage) {
+            case 'cover':
+                $form
+                    ->remove('lazyLoad')
+                    ->remove('alt')
                     ->remove('title')
                     ->remove('legend')
-                    ->remove('width')
-                    ->add(
-                        'height',
-                        null,
-                        array(
-                            'label' => 'widget_image.form.minHeight.label',
-                            'vic_help_label' => 'widget_image.form.height.help_label',
-                        )
-                    )
                     ->remove('link')
-                    ->remove('asynchronous')
-                    ->remove('lazyLoad');
+                    ->remove('width')
+                    ->remove('popover')
+                    ->remove('placement')
+                ;
+                break;
+            case 'popover':
+                self::generateDefaultFields($form);
+                $form
+                    ->add('popover', 'ckeditor', [
+                        'label' => 'widget_image.from.popover.label',
+                        'required' => false,
+                    ])
+                    ->add('placement', 'choice', [
+                        'label' => 'widget_image.from.placement.label',
+                        'required' => false,
+                        'choices' => [
+                            'bottom' => 'widget_image.from.placement.bottom',
+                            'left' => 'widget_image.from.placement.left',
+                            'right' => 'widget_image.from.placement.right',
+                            'top' => 'widget_image.from.placement.top',
+                        ],
+                    ])
+                ;
                 break;
             default:
-                $form->add(
-                        'alt',
-                        null,
-                        array(
-                            'label' => 'widget_image.form.alt.label',
-                            'vic_help_label' => 'widget_image.form.alt.help_label',
-                        )
-                    )
-                    ->add(
-                        'title',
-                        null,
-                        array(
-                            'label' => 'widget_image.form.title.label',
-                        )
-                    )
-                    ->add(
-                        'legend',
-                        null,
-                        array(
-                            'label' => 'widget_image.form.legend.label',
-                        )
-                    )
-                    ->add(
-                        'width',
-                        null,
-                        array(
-                            'label' => 'widget_image.form.width.label',
-                            'vic_help_label' => 'widget_image.form.width.help_label',
-                        )
-                    )
-                    ->add(
-                        'height',
-                        null,
-                        array(
-                            'label' => 'widget_image.form.height.label',
-                            'vic_help_label' => 'widget_image.form.width.help_label',
-                        )
-                    )
-                    ->add('link', 'victoire_link')
-                    ->add(
-                        'lazyLoad',
-                        null,
-                        array(
-                            'label'          => 'widget_image.form.lazyLoad.label',
-                            'vic_help_label' => 'widget_image.form.lazyLoad.help_label',
-                            'required'       => false,
-                        )
-                    )->add('asynchronous', null, array(
-                            'label'    => 'victoire.widget.type.asynchronous.label',
-                            'required' => false
-                        ));
+                self::generateDefaultFields($form);
+                $form
+                    ->remove('popover')
+                    ->remove('placement')
+                ;
                 break;
         }
     }

@@ -53,6 +53,21 @@ class WidgetImage extends Widget
     /**
      * @var string
      *
+     * @ORM\Column(name="popover", type="text", nullable=true)
+     * @VIC\ReceiverProperty("textable")
+     */
+    protected $popover;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="placement", type="string", length=255, nullable=true)
+     */
+    protected $placement = "bottom";
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="width", type="string", length=255, nullable=true)
      */
     protected $width;
@@ -68,11 +83,6 @@ class WidgetImage extends Widget
      * @ORM\Column(name="lazy_load", type="boolean", nullable=true)
      */
     protected $lazyLoad = true;
-
-    /**
-     * @ORM\Column(name="cover", type="boolean", nullable=true)
-     */
-    protected $cover = false;
 
     /**
      * @var integer
@@ -91,9 +101,15 @@ class WidgetImage extends Widget
     protected $relatedPage;
 
     /**
-     * Set image
-     * @param string $image
+     * @var string
      *
+     * @ORM\Column(name="imageTheme", type="string", length=255, nullable=true)
+     */
+    protected $imageTheme;
+
+    /**
+     * Set image
+     * @param string|Media $image
      * @return WidgetImage
      */
     public function setImage(Media $image)
@@ -156,6 +172,29 @@ class WidgetImage extends Widget
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set popover
+     * @param string $popover
+     *
+     * @return WidgetImage
+     */
+    public function setPopover($popover)
+    {
+        $this->popover = $popover;
+
+        return $this;
+    }
+
+    /**
+     * Get popover
+     *
+     * @return string
+     */
+    public function getPopover()
+    {
+        return $this->popover;
     }
 
     /**
@@ -338,26 +377,6 @@ class WidgetImage extends Widget
     }
 
     /**
-     * @param bool $cover
-     *
-     * @return WidgetImage
-     */
-    public function setCover($cover)
-    {
-        $this->cover = $cover;
-
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isCover()
-    {
-        return $this->cover;
-    }
-
-    /**
      * Get opacity
      *
      * @return string
@@ -377,6 +396,44 @@ class WidgetImage extends Widget
     public function setOpacity($opacity)
     {
         $this->opacity = $opacity;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageTheme()
+    {
+        return $this->imageTheme;
+    }
+
+    /**
+     * @param string $imageTheme
+     * @return $this
+     */
+    public function setImageTheme($imageTheme)
+    {
+        $this->imageTheme = $imageTheme;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlacement()
+    {
+        return $this->placement;
+    }
+
+    /**
+     * @param string $placement
+     * @return $this
+     */
+    public function setPlacement($placement)
+    {
+        $this->placement = $placement;
 
         return $this;
     }
