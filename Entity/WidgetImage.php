@@ -65,6 +65,11 @@ class WidgetImage extends Widget
      */
     protected $placement = "bottom";
 
+    /** depreciated
+     * @ORM\Column(name="cover", type="boolean", nullable=true)
+     */
+    protected $cover = false;
+
     /**
      * @var string
      *
@@ -434,6 +439,25 @@ class WidgetImage extends Widget
     public function setPlacement($placement)
     {
         $this->placement = $placement;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isCover()
+    {
+        return $this->cover;
+    }
+
+    /**
+     * @param mixed $cover
+     * @return $this
+     */
+    public function setCover($cover)
+    {
+        $this->cover = $cover;
 
         return $this;
     }
