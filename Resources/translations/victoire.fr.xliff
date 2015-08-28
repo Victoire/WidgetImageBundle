@@ -120,7 +120,7 @@
       </trans-unit>
       <trans-unit resname="widget_image.form.popover">
         <source>widget_image.form.popover</source>
-        <target>Image avec texte riche au survol</target>
+        <target>Image avec texte au survol</target>
       </trans-unit>
       <trans-unit resname="widget_image.from.popover.label">
         <source>widget_image.from.popover.label</source>
@@ -149,6 +149,10 @@
       <trans-unit resname="widget_image.form.theme.label">
         <source>widget_image.form.theme.label</source>
         <target>Quel type d'image souhaitez vous ?</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.title.popover.label">
+        <source>widget_image.form.title.popover.label</source>
+        <target>Titre de la popover</target>
       </trans-unit>
     </body>
   </file>

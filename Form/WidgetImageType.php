@@ -112,6 +112,9 @@ class WidgetImageType extends WidgetType
             case 'popover':
                 self::generateDefaultFields($form);
                 $form
+                    ->add('title', null, [
+                        'label' => 'widget_image.form.title.popover.label',
+                    ])
                     ->add('popover', 'ckeditor', [
                         'label' => 'widget_image.from.popover.label',
                         'required' => false,
