@@ -15,7 +15,7 @@
 
 {% block content %}
 
-{% if imageTheme != "cover" %}
+{% if imageTheme != "cover" or widget.isCover %}
     {% if link.linkType is defined and link.linkType != 'none' %}
         <a href="{{ vic_link_url(link.parameters) }}" target="{{ link.target }}" title="{{ title }}">
     {% endif %}
