@@ -1,9 +1,21 @@
 {% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 {% trans_default_domain "victoire" %}
 
+{% block popover %}
+    {% if popover is defined and popover %}
+        id="widgetImagePopoverTrigger{{ widget.id }}"
+        data-toggle="popover"
+        data-trigger="hover"
+        data-html="true"
+        {{ (title is defined and title) ? "title='#{title}'"|raw : "" }}
+        data-content="{{ popover }}"
+        data-placement="{{ (placement is defined and placement) ? placement : "bottom" }}"
+    {% endif %}
+{% endblock popover %}
+
 {% block content %}
 
-{% if not widget.isCover %}
+{% if imageTheme != "cover" %}
     {% if link.linkType is defined and link.linkType != 'none' %}
         <a href="{{ vic_link_url(link.parameters) }}" target="{{ link.target }}" title="{{ title }}">
     {% endif %}
@@ -11,7 +23,7 @@
        {{ 'The image was not found'|trans }}
     {% else %}
         {% if (entity != null or mode == 'static') %}
-            <img
+            <img {{ block('popover')|raw }}
                 {% if widget.lazyLoad == true and not app.request.isXmlHttpRequest() %}
                     src="/bundles/victoirewidgetimage/images/placeholder.png"
                     data-src="{{ image.url }}"
@@ -23,6 +35,11 @@
                 {% if width %}width="{{ width }}"{% endif %}
                 {% if height %}height="{{ height }}"{% endif %}
             />
+            <script>
+                $(document).ready(function() {
+                    $('#widgetImagePopoverTrigger{{ widget.id }}').popover();
+                });
+            </script>
             {% if legend != '' %}
                 <legend>{{ legend }}</legend>
             {% endif %}
