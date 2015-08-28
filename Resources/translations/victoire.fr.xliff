@@ -110,6 +110,46 @@
         <source>widget_image.form.opacity.help_block</source>
         <target>Pour une opacité à 50%, saisir: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))</target>
       </trans-unit>
+      <trans-unit resname="widget_image.form.default">
+        <source>widget_image.form.default</source>
+        <target>Image normale</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.cover">
+        <source>widget_image.form.cover</source>
+        <target>Image de type Cover</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.popover">
+        <source>widget_image.form.popover</source>
+        <target>Image avec texte riche au survol</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.from.popover.label">
+        <source>widget_image.from.popover.label</source>
+        <target>Contenu du texte au survol</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.from.placement.label">
+        <source>widget_image.from.placement.label</source>
+        <target>Placement de la popover ?</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.from.placement.bottom">
+        <source>widget_image.from.placement.bottom</source>
+        <target>En bas</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.from.placement.left">
+        <source>widget_image.from.placement.left</source>
+        <target>A gauche</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.from.placement.right">
+        <source>widget_image.from.placement.right</source>
+        <target>A droite</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.from.placement.top">
+        <source>widget_image.from.placement.top</source>
+        <target>En haut</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.theme.label">
+        <source>widget_image.form.theme.label</source>
+        <target>Quel type d'image souhaitez vous ?</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
