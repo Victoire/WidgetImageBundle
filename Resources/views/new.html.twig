@@ -3,35 +3,40 @@
 {% block form_static %}
 <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
     {{ form_start(form) }}
-    {% set imageTheme = form.imageTheme.vars.data|default('default') %}
-    {% set base = {
-        'default' : {left: 'col-md-4', right: 'col-md-8'},
-        'cover'   : {left: 'col-md-8', right: 'col-md-4'},
-        'popover' : {left: 'col-md-3', right: 'col-md-9'}
-    } %}
     <div class="row">
-        <div class="col-ms-12 {{ attribute(base, imageTheme).left }}">
+        <h3 class="col-sm-12">Contenu</h3>
+        <div class="col-sm-7">
             {% include 'VictoireWidgetImageBundle:form:image.html.twig' %}
         </div>
-        <div class="col-ms-12 {{ attribute(base, imageTheme).right }}">
-            {% set layout = {
-                'default' : {text: 'col-md-6',  link: 'col-md-6', style: 'col-md-12'},
-                'cover'   : {text: 'hidden',    link: 'hidden',   style: 'col-md-12'},
-                'popover' : {text: 'col-md-12', link: 'col-md-4', style: 'col-md-8'}
-            } %}
-            <div class="col-ms-12 {{ attribute(layout, imageTheme).text }}">
-                {% include 'VictoireWidgetImageBundle:form:text.html.twig' %}
-            </div>
-            <div class="col-ms-12 {{ attribute(layout, imageTheme).link }}">
-                {% include 'VictoireWidgetImageBundle:form:link.html.twig' %}
-            </div>
-            <div class="col-ms-12 {{ attribute(layout, imageTheme).style }}">
-                {% include 'VictoireWidgetImageBundle:form:style.html.twig' %}
+        <div class="col-sm-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    {{ form_row(form.alt) }}
+                </div>
+                <div class="col-sm-12">
+                    {{ form_row(form.legend) }}
+                </div>
             </div>
         </div>
+        <h3 class="col-sm-12">Lien</h3>
+        {{ form_widget(form.link) }}
+        <h3 class="col-sm-12">Survol</h3>
         <div class="col-sm-12">
-            {{ form_rest(form) }}
+            <div class="row">
+                <div class="col-sm-4">{{ form_row(form.hover) }}</div>
+                {% if form.placement is defined and form.placement %}
+                <div class="col-sm-4">{{ form_row(form.placement) }}</div>
+                {% endif %}
+                <div class="col-sm-4">{{ form_row(form.title) }}</div>
+                {% if form.popover is defined and form.popover %}
+                    {{ form_row(form.popover) }}
+                {% endif %}
+                {% if form.tooltip is defined and form.tooltip %}
+                    {{ form_row(form.tooltip) }}
+                {% endif %}
+            </div>
         </div>
+        {{ form_rest(form) }}
     </div>
     {{ form_end(form) }}
 </div>
@@ -40,20 +45,18 @@
 {% block form %}
 {{ parent() }}
 <script type="text/javascript">
-    $vic('#victoire_widget_form_image_linkType').on('change', function(){
-        $vic('.vic-linkType').addClass('vic-hidden');
-        if ($vic(this).val() == 'url') {
-            $vic('.vic-linkType-url').removeClass('vic-hidden');
-        } else if ($vic(this).val() == 'page') {
-            $vic('.vic-linkType-page').removeClass('vic-hidden');
-        }
-    });
-
+    <!--
+    /**
+     * This function update the textarea hidden by CKEditor before submit the form to submit the good value.
+     */
     $vic(document).on('victoire_widget_form_create_presubmit victoire_widget_form_update_presubmit', function(event) {
-        for ( instance in CKEDITOR.instances ) {
-            CKEDITOR.instances[instance].updateElement();
+        if (typeof CKEDITOR != 'undefined') {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
         }
     });
+    -->
 </script>
 
 {% endblock form %}
