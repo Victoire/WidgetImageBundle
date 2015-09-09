@@ -1,0 +1,10 @@
+{% block tooltip %}
+
+    {% if hover is defined and hover == 'tooltip' %}
+        id="widgetImageTooltipTrigger{{ widget.id }}"
+        data-toggle="tooltip"
+        data-placement="{{ (placement is defined and placement) ? placement : "bottom" }}"
+        {{ (title is defined and title) ? ('title=' ~ title|e('html_attr'))|raw : "" }}
+    {% endif %}
+
+{% endblock %}

@@ -1,5 +1,8 @@
-{{ form_row(form.imageTheme) }}
-{{ form_row(form.image) }}
-{% if imageTheme != "cover" %}
-    {{ form_row(form.lazyLoad) }}
-{% endif %}
+<div class="row">
+    <div class="col-sm-12">
+        {{ form_widget(form.image) }}
+    </div>
+    <div class="col-sm-12">
+        {{ form_row(form.lazyLoad) }}
+    </div>
+</div>

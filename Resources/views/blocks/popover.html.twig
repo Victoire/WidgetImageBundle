@@ -1,0 +1,11 @@
+{% block popover %}
+    {% if hover is defined and hover == 'popover' %}
+        id="widgetImagePopoverTrigger{{ widget.id }}"
+        data-toggle="popover"
+        data-trigger="hover"
+        data-html="true"
+        {{ (title is defined and title) ? ('title=' ~ title|e('html_attr'))|raw : "" }}
+        {{ (popover is defined and popover) ? ('data-content=' ~ popover|e('html_attr'))|raw : "" }}
+        data-placement="{{ (placement is defined and placement) ? placement : "bottom" }}"
+    {% endif %}
+{% endblock popover %}
