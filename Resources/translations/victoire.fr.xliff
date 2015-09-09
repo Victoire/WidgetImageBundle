@@ -154,6 +154,26 @@
         <source>widget_image.form.title.popover.label</source>
         <target>Titre de la popover</target>
       </trans-unit>
+      <trans-unit resname="widget_image.form.title.tooltip.label">
+        <source>widget_image.form.title.popover.label</source>
+        <target>Texte au survol</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.hover.label">
+        <source>widget_image.form.hover.label</source>
+        <target>Type de survol</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.hover.choice.default.label">
+        <source>widget_image.form.hover.choice.default.label</source>
+        <target>Par defaut</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.hover.choice.popover.label">
+        <source>widget_image.form.hover.choice.popover.label</source>
+        <target>Popover</target>
+      </trans-unit>
+      <trans-unit resname="widget_image.form.hover.choice.tooltip.label">
+        <source>widget_image.form.hover.choice.tooltip.label</source>
+        <target>Tooltip</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
