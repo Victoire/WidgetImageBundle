@@ -65,36 +65,10 @@ class WidgetImage extends Widget
      */
     protected $placement = "bottom";
 
-    /** depreciated
-     * @ORM\Column(name="cover", type="boolean", nullable=true)
-     */
-    protected $cover = false;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="width", type="string", length=255, nullable=true)
-     */
-    protected $width;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="height", type="string", length=255, nullable=true)
-     */
-    protected $height;
-
     /**
      * @ORM\Column(name="lazy_load", type="boolean", nullable=true)
      */
     protected $lazyLoad = true;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="opacity", type="string", length=255, nullable=true)
-     */
-    protected $opacity;
 
     /**
      * @deprecated, this field is now "page"
@@ -107,10 +81,9 @@ class WidgetImage extends Widget
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="imageTheme", type="string", length=255, nullable=true)
+     * @ORM\Column(name="hover", type="string", length=255, nullable=true)
      */
-    protected $imageTheme;
+    protected $hover;
 
     /**
      * Set image
@@ -249,52 +222,6 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set width
-     * @param string $width
-     *
-     * @return MenuItem
-     */
-    public function setWidth($width)
-    {
-        $this->width = $width;
-
-        return $this;
-    }
-
-    /**
-     * Get width
-     *
-     * @return string
-     */
-    public function getWidth()
-    {
-        return $this->width;
-    }
-
-    /**
-     * Set height
-     * @param string $height
-     *
-     * @return MenuItem
-     */
-    public function setHeight($height)
-    {
-        $this->height = $height;
-
-        return $this;
-    }
-
-    /**
-     * Get height
-     *
-     * @return string
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    /**
      * Set url
      * @param string $url
      *
@@ -382,44 +309,20 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get opacity
-     *
      * @return string
      */
-    public function getOpacity()
+    public function getHover()
     {
-        return $this->opacity;
+        return $this->hover;
     }
 
     /**
-     * Set opacity
-     *
-     * @param string $opacity
-     *
+     * @param string $hover
      * @return $this
      */
-    public function setOpacity($opacity)
+    public function setHover($hover)
     {
-        $this->opacity = $opacity;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImageTheme()
-    {
-        return $this->imageTheme;
-    }
-
-    /**
-     * @param string $imageTheme
-     * @return $this
-     */
-    public function setImageTheme($imageTheme)
-    {
-        $this->imageTheme = $imageTheme;
+        $this->hover = $hover;
 
         return $this;
     }
@@ -443,22 +346,4 @@ class WidgetImage extends Widget
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function isCover()
-    {
-        return $this->cover;
-    }
-
-    /**
-     * @param mixed $cover
-     * @return $this
-     */
-    public function setCover($cover)
-    {
-        $this->cover = $cover;
-
-        return $this;
-    }
 }
