@@ -1,0 +1,13 @@
+{% if hover is defined and hover in ['popover', 'tooltip'] %}
+<script>
+    <!--
+    $(document).ready(function() {
+        {% if hover == 'popover' %}
+            $('#widgetImagePopoverTrigger{{ widget.id }}').popover();
+        {% elseif hover == 'tooltip' %}
+            $('#widgetImageTooltipTrigger{{ widget.id }}').tooltip();
+        {% endif %}
+    });
+    -->
+</script>
+{% endif %}

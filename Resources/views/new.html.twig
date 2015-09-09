@@ -3,52 +3,41 @@
 {% block form_static %}
 <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
     {{ form_start(form) }}
-
-
     <div class="row">
-        <div class="vic-col-sm-8 vic-pull-right vic-text-center ">
-            {{ form_widget(form.cover) }}
+        <h3 class="col-sm-12">Contenu</h3>
+        <div class="col-sm-7">
+            {% include 'VictoireWidgetImageBundle:form:image.html.twig' %}
         </div>
-    </div>
-    <div class="row">
-        <div class="{% if not form.cover.vars.data %}vic-col-sm-4{% else %}vic-col-sm-8{% endif %}">
-            {{ form_widget(form.image) }}
-            {{ form_errors(form.image) }}
-        </div>
-
-        {% if not form.cover.vars.data %}
-        <div class="vic-col-sm-4">
+        <div class="col-sm-5">
             <div class="row">
-                <div class="vic-col-sm-6">
-                    {{ form_row(form.width) }}
+                <div class="col-sm-12">
+                    {{ form_row(form.alt) }}
                 </div>
-
-                <div class="vic-col-sm-6">
-                    {{ form_row(form.height) }}
+                <div class="col-sm-12">
+                    {{ form_row(form.legend) }}
                 </div>
             </div>
-
-            {{ form_row(form.alt) }}
-
-            {{ form_row(form.title) }}
-            {{ form_row(form.legend) }}
         </div>
-
-        <div class="vic-col-sm-4">
-            {{ form_widget(form.link) }}
-            {{ form_widget(form.lazyLoad) }}
-            {{ form_row(form.opacity) }}
-            {{ form_widget(form.asynchronous) }}
+        <h3 class="col-sm-12">Lien</h3>
+        {{ form_widget(form.link) }}
+        <h3 class="col-sm-12">Survol</h3>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4">{{ form_row(form.hover) }}</div>
+                {% if form.placement is defined and form.placement %}
+                <div class="col-sm-4">{{ form_row(form.placement) }}</div>
+                {% endif %}
+                <div class="col-sm-4">{{ form_row(form.title) }}</div>
+                {% if form.popover is defined and form.popover %}
+                    {{ form_row(form.popover) }}
+                {% endif %}
+                {% if form.tooltip is defined and form.tooltip %}
+                    {{ form_row(form.tooltip) }}
+                {% endif %}
+            </div>
         </div>
-        {% else %}
-        <div class="vic-col-sm-4">
-            {{ form_row(form.height) }}
-            {{ form_row(form.opacity) }}
-        </div>
-        {% endif %}
+        {{ form_rest(form) }}
     </div>
-
-    {{ form_rest(form) }}
     {{ form_end(form) }}
 </div>
 {% endblock form_static %}
@@ -56,14 +45,18 @@
 {% block form %}
 {{ parent() }}
 <script type="text/javascript">
-    $vic('#victoire_widget_form_image_linkType').on('change', function(){
-        $vic('.vic-linkType').addClass('vic-hidden');
-        if ($vic(this).val() == 'url') {
-            $vic('.vic-linkType-url').removeClass('vic-hidden');
-        } else if ($vic(this).val() == 'page') {
-            $vic('.vic-linkType-page').removeClass('vic-hidden');
+    <!--
+    /**
+     * This function update the textarea hidden by CKEditor before submit the form to submit the good value.
+     */
+    $vic(document).on('victoire_widget_form_create_presubmit victoire_widget_form_update_presubmit', function(event) {
+        if (typeof CKEDITOR != 'undefined') {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
         }
     });
+    -->
 </script>
 
 {% endblock form %}
