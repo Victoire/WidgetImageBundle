@@ -5,4 +5,4 @@
     src="{{ image.url }}"
 {% endif %}
 {{ (alt) ? ('alt=' ~ alt|e('html_attr'))|raw : '' }}
-
+id="{{ 'vic-image-' ~ widget.id }}"

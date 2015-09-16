@@ -86,6 +86,20 @@ class WidgetImage extends Widget
     protected $hover;
 
     /**
+     * @var string
+     * @deprecated
+     * @ORM\Column(name="height", type="string", length=255, nullable=true)
+     */
+    protected $height;
+
+    /**
+     * @var string
+     * @deprecated
+     * @ORM\Column(name="width", type="string", length=255, nullable=true)
+     */
+    protected $width;
+
+    /**
      * Set image
      * @param string|Media $image
      * @return WidgetImage
@@ -202,7 +216,7 @@ class WidgetImage extends Widget
      * Set linkType
      * @param string $linkType
      *
-     * @return MenuItem
+     * @return WidgetImage
      */
     public function setlinkType($linkType)
     {
@@ -225,7 +239,7 @@ class WidgetImage extends Widget
      * Set url
      * @param string $url
      *
-     * @return MenuItem
+     * @return WidgetImage
      */
     public function setUrl($url)
     {
@@ -344,6 +358,52 @@ class WidgetImage extends Widget
         $this->placement = $placement;
 
         return $this;
+    }
+
+    /**
+     * Set height
+     * @param string $height
+     *
+     * @return WidgetImage
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+
+        return $this;
+    }
+
+    /**
+     * Get height
+     *
+     * @return string
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * Set width
+     * @param string $width
+     *
+     * @return WidgetImage
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+
+        return $this;
+    }
+
+    /**
+     * Get width
+     *
+     * @return string
+     */
+    public function getWidth()
+    {
+        return $this->width;
     }
 
 }
