@@ -1,0 +1,15 @@
+{
+  "require_all":
+  {
+    "javascripts":
+    {
+    },
+    "stylesheets":
+    {
+      "head":
+      [
+        "@VictoireWidgetImageBundle/Resources/public/css/image.scss"
+      ]
+    }
+  }
+}

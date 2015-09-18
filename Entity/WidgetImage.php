@@ -53,33 +53,22 @@ class WidgetImage extends Widget
     /**
      * @var string
      *
-     * @ORM\Column(name="width", type="string", length=255, nullable=true)
+     * @ORM\Column(name="popover", type="text", nullable=true)
+     * @VIC\ReceiverProperty("textable")
      */
-    protected $width;
+    protected $popover;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="height", type="string", length=255, nullable=true)
+     * @ORM\Column(name="placement", type="string", length=255, nullable=true)
      */
-    protected $height;
+    protected $placement = "bottom";
 
     /**
      * @ORM\Column(name="lazy_load", type="boolean", nullable=true)
      */
     protected $lazyLoad = true;
-
-    /**
-     * @ORM\Column(name="cover", type="boolean", nullable=true)
-     */
-    protected $cover = false;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="opacity", type="string", length=255, nullable=true)
-     */
-    protected $opacity;
 
     /**
      * @deprecated, this field is now "page"
@@ -91,9 +80,28 @@ class WidgetImage extends Widget
     protected $relatedPage;
 
     /**
+     * @var string
+     * @ORM\Column(name="hover", type="string", length=255, nullable=true)
+     */
+    protected $hover;
+
+    /**
+     * @var string
+     * @deprecated
+     * @ORM\Column(name="height", type="string", length=255, nullable=true)
+     */
+    protected $height;
+
+    /**
+     * @var string
+     * @deprecated
+     * @ORM\Column(name="width", type="string", length=255, nullable=true)
+     */
+    protected $width;
+
+    /**
      * Set image
-     * @param string $image
-     *
+     * @param string|Media $image
      * @return WidgetImage
      */
     public function setImage(Media $image)
@@ -159,6 +167,29 @@ class WidgetImage extends Widget
     }
 
     /**
+     * Set popover
+     * @param string $popover
+     *
+     * @return WidgetImage
+     */
+    public function setPopover($popover)
+    {
+        $this->popover = $popover;
+
+        return $this;
+    }
+
+    /**
+     * Get popover
+     *
+     * @return string
+     */
+    public function getPopover()
+    {
+        return $this->popover;
+    }
+
+    /**
      * Set legend
      * @param string $legend
      *
@@ -185,7 +216,7 @@ class WidgetImage extends Widget
      * Set linkType
      * @param string $linkType
      *
-     * @return MenuItem
+     * @return WidgetImage
      */
     public function setlinkType($linkType)
     {
@@ -205,56 +236,10 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set width
-     * @param string $width
-     *
-     * @return MenuItem
-     */
-    public function setWidth($width)
-    {
-        $this->width = $width;
-
-        return $this;
-    }
-
-    /**
-     * Get width
-     *
-     * @return string
-     */
-    public function getWidth()
-    {
-        return $this->width;
-    }
-
-    /**
-     * Set height
-     * @param string $height
-     *
-     * @return MenuItem
-     */
-    public function setHeight($height)
-    {
-        $this->height = $height;
-
-        return $this;
-    }
-
-    /**
-     * Get height
-     *
-     * @return string
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    /**
      * Set url
      * @param string $url
      *
-     * @return MenuItem
+     * @return WidgetImage
      */
     public function setUrl($url)
     {
@@ -338,46 +323,87 @@ class WidgetImage extends Widget
     }
 
     /**
-     * @param bool $cover
+     * @return string
+     */
+    public function getHover()
+    {
+        return $this->hover;
+    }
+
+    /**
+     * @param string $hover
+     * @return $this
+     */
+    public function setHover($hover)
+    {
+        $this->hover = $hover;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlacement()
+    {
+        return $this->placement;
+    }
+
+    /**
+     * @param string $placement
+     * @return $this
+     */
+    public function setPlacement($placement)
+    {
+        $this->placement = $placement;
+
+        return $this;
+    }
+
+    /**
+     * Set height
+     * @param string $height
      *
      * @return WidgetImage
      */
-    public function setCover($cover)
+    public function setHeight($height)
     {
-        $this->cover = $cover;
+        $this->height = $height;
 
         return $this;
     }
 
     /**
-     * @return bool
-     */
-    public function isCover()
-    {
-        return $this->cover;
-    }
-
-    /**
-     * Get opacity
+     * Get height
      *
      * @return string
      */
-    public function getOpacity()
+    public function getHeight()
     {
-        return $this->opacity;
+        return $this->height;
     }
 
     /**
-     * Set opacity
+     * Set width
+     * @param string $width
      *
-     * @param string $opacity
-     *
-     * @return $this
+     * @return WidgetImage
      */
-    public function setOpacity($opacity)
+    public function setWidth($width)
     {
-        $this->opacity = $opacity;
+        $this->width = $width;
 
         return $this;
     }
+
+    /**
+     * Get width
+     *
+     * @return string
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
 }

@@ -1,0 +1,8 @@
+{% if widget.lazyLoad == true and not app.request.isXmlHttpRequest() %}
+    src="/bundles/victoirewidgetimage/images/placeholder.png"
+    data-src="{{ image.url }}"
+{% else %}
+    src="{{ image.url }}"
+{% endif %}
+{{ (alt) ? ('alt=' ~ alt|e('html_attr'))|raw : '' }}
+id="{{ 'vic-image-' ~ widget.id }}"
