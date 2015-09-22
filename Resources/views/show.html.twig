@@ -10,8 +10,6 @@
 {% block style %}{% include 'VictoireWidgetImageBundle:blocks:style.html.twig' %}{% endblock %}
 
 {% block widgetImage %}
-
-
     {{ block('style') }}
     {% if (entity != null or mode == 'static') %}
         {{ block('image')|raw }} {{ block('legend') }} {{ block('script') }}
@@ -26,9 +24,7 @@
         {{ 'The image was not found'|trans }}
     {% else %}
         {% if link.linkType is defined and link.linkType != 'none' %}
-            <a href="{{ vic_link_url(link.parameters) }}" target="{{ link.target }}" title="{{ title }}">
-                {{ block('widgetImage')|raw }}
-            </a>
+            {{ vic_link(link.parameters, block('widgetImage'), {'title': title}) }}
         {% else %}
             {{ block('widgetImage')|raw }}
         {% endif %}
