@@ -7,10 +7,9 @@
 {% block image %}<img {{ block('attributes')|raw }} {{ block('popover')|raw }} {{ block('tooltip')|raw }}/>{% endblock %}
 {% block script %}{% include 'VictoireWidgetImageBundle:blocks:script.html.twig' %}{% endblock %}
 {% block legend %}{% if legend != '' %}<legend>{{ legend }}</legend>{% endif %}{% endblock %}
-{% block style %}{% include 'VictoireWidgetImageBundle:blocks:style.html.twig' %}{% endblock %}
+{% block style %}{%- include 'VictoireWidgetImageBundle:blocks:style.html.twig' -%}{% endblock %}
 
 {% block widgetImage %}
-    {{ block('style') }}
     {% if (entity != null or mode == 'static') %}
         {{ block('image')|raw }} {{ block('legend') }} {{ block('script') }}
     {% else %}
@@ -20,6 +19,7 @@
 
 {% block content %}
 
+    {{ block('style') }}
     {% if image.url is not defined or (image.url is defined and image.url == null) %}
         {{ 'The image was not found'|trans }}
     {% else %}
