@@ -21,7 +21,8 @@
             {%- set marginAlignment =  '0 0 0 auto' -%}
         {%- endif -%}
         {%- include "VictoireCoreBundle:Widget/show:_style.html.twig" with {
-            'margin': attribute(widget, 'margin' ~ responsive|upper)|default(marginAlignment),
+            'margin': attribute(widget, 'containerMargin' ~ responsive|upper)|default(marginAlignment),
+            'mediaQuery': attr is defined ? attr,
             'selector': '#widget-' ~ widget.id
         } -%}
     {%- endfor -%}
