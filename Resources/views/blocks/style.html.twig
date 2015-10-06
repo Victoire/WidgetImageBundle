@@ -15,4 +15,14 @@
             'selector': '#vic-image-' ~ widget.id
         } %}
     {% endfor %}
+        {%- set marginAlignment = false -%}
+        {%- if attribute(widget, 'textAlign' ~ responsive|upper) == 'center' -%}
+            {%- set marginAlignment =  '0 auto' -%}
+        {%- elseif attribute(widget, 'textAlign' ~ responsive|upper) == 'right' -%}
+            {%- set marginAlignment =  '0 0 0 auto' -%}
+        {%- endif -%}
+        {%- include "VictoireCoreBundle:Widget/show:_style.html.twig" with {
+            'margin': attribute(widget, 'margin' ~ responsive|upper)|default(marginAlignment),
+            'selector': '#widget-' ~ widget.id
+        } -%}
 </style>
