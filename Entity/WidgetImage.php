@@ -29,7 +29,7 @@ class WidgetImage extends Widget
     /**
      * @var string
      *
-     * @ORM\Column(name="alt", type="string", length=255, nullable=true)
+     * @ORM\Column(name="alt", type="string", length=255, nullable=false)
      * @VIC\ReceiverProperty("textable")
      */
     protected $alt;

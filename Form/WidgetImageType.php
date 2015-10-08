@@ -34,6 +34,8 @@ class WidgetImageType extends WidgetType
                 ])
                 ->add('alt', null, [
                     'label' => 'widget_image.form.alt.label',
+                    'required' => true,
+                    'attr'  => ['novalidate' => 'novalidate', 'placeholder' => 'widget_image.form.alt.placeholder'],
                 ])
                 ->add('legend', null, [
                     'label' => 'widget_image.form.legend.label',
@@ -44,8 +46,8 @@ class WidgetImageType extends WidgetType
                 ])
                 ->add('hover', 'choice', [
                     'label' => 'widget_image.form.hover.label',
-                    'attr' => array(
-                        'data-refreshOnChange' => "true",
+                    'attr'  => array(
+                    'data-refreshOnChange' => "true",
                     ),
                     'choices'       => array(
                         'default' => 'widget_image.form.hover.choice.default.label',
@@ -84,16 +86,16 @@ class WidgetImageType extends WidgetType
                     'label' => 'widget_image.form.title.popover.label',
                 ])
                 ->add('popover', 'ckeditor', [
-                    'label' => 'widget_image.from.popover.label',
+                    'label' => 'widget_image.form.popover.label',
                     'required' => false,
                 ])
                 ->add('placement', 'choice', [
-                    'label' => 'widget_image.from.placement.label',
+                    'label' => 'widget_image.form.placement.label',
                     'choices' => [
-                        'bottom' => 'widget_image.from.placement.bottom',
-                        'left' => 'widget_image.from.placement.left',
-                        'right' => 'widget_image.from.placement.right',
-                        'top' => 'widget_image.from.placement.top',
+                        'bottom' => 'widget_image.form.placement.bottom',
+                        'left' => 'widget_image.form.placement.left',
+                        'right' => 'widget_image.form.placement.right',
+                        'top' => 'widget_image.form.placement.top',
                     ],
                 ])
             ;
@@ -105,12 +107,12 @@ class WidgetImageType extends WidgetType
                     'label' => 'widget_image.form.title.tooltip.label',
                 ])
                 ->add('placement', 'choice', [
-                    'label' => 'widget_image.from.placement.label',
+                    'label' => 'widget_image.form.placement.label',
                     'choices' => [
-                        'bottom' => 'widget_image.from.placement.bottom',
-                        'left' => 'widget_image.from.placement.left',
-                        'right' => 'widget_image.from.placement.right',
-                        'top' => 'widget_image.from.placement.top',
+                        'bottom' => 'widget_image.form.placement.bottom',
+                        'left' => 'widget_image.form.placement.left',
+                        'right' => 'widget_image.form.placement.right',
+                        'top' => 'widget_image.form.placement.top',
                     ],
                 ])
             ;
