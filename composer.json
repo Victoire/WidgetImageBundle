@@ -1,14 +1,14 @@
 {
     "name": "friendsofvictoire/image-widget",
     "type": "symfony-bundle",
-    "description": "Victoire Cms Image component",
-    "keywords": ["cms", "victoire", "image"],
-    "homepage": "http://appventus.com",
+    "description": "Victoire DCMS Image widget",
+    "keywords": ["DCMS", "Victoire", "Image", "widget", "FriendsofVictoire", "Dynamic", "CMS"],
+    "homepage": "http://victoire.io",
     "license": "MIT",
     "authors": [
         {
             "name": "Paul Andrieux",
-            "email": "paul@appventus.com"
+            "email": "paul@victoire.io"
         }
     ],
     "require": {
