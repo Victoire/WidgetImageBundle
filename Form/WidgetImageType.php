@@ -34,6 +34,8 @@ class WidgetImageType extends WidgetType
                 ])
                 ->add('alt', null, [
                     'label' => 'widget_image.form.alt.label',
+                    'required' => true,
+                    'attr'  => ['novalidate' => 'novalidate', 'placeholder' => 'widget_image.form.alt.placeholder'],
                 ])
                 ->add('legend', null, [
                     'label' => 'widget_image.form.legend.label',
