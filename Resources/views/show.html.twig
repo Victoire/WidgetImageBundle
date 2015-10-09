@@ -21,7 +21,7 @@
 
     {{ block('style') }}
     {% if image.url is not defined or (image.url is defined and image.url == null) %}
-        {{ 'The image was not found'|trans }}
+        {{ 'widget_image.noresult'|trans({}, 'victoire') }}
     {% else %}
         {% if link.linkType is defined and link.linkType != 'none' %}
             {{ vic_link(link.parameters, block('widgetImage'), {'title': title}) }}

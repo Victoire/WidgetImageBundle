@@ -4,7 +4,7 @@
 <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
     {{ form_start(form) }}
     <div class="row">
-        <h3 class="col-sm-12">Contenu</h3>
+        <h3 class="col-sm-12">{{ 'widget_image.form.content.label'|trans({}, 'victoire') }}</h3>
         <div class="col-sm-7">
             {% include 'VictoireWidgetImageBundle:form:image.html.twig' %}
         </div>
@@ -18,9 +18,9 @@
                 </div>
             </div>
         </div>
-        <h3 class="col-sm-12">Lien</h3>
+        <h3 class="col-sm-12">{{ 'widget_image.form.link.label'|trans({}, 'victoire') }}</h3>
         {{ form_widget(form.link) }}
-        <h3 class="col-sm-12">Survol</h3>
+        <h3 class="col-sm-12">{{ 'widget_image.form.hover.label'|trans({}, 'victoire') }}</h3>
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-4">{{ form_row(form.hover) }}</div>
