@@ -14,7 +14,7 @@
     "require": {
         "php"                                 : ">=5.3.3",
         "symfony/framework-bundle"            : "~2.3",
-        "victoire/victoire"                   : "<=1.2.1"
+        "victoire/victoire"                   : ">=1.2.2"
     },
     "autoload": {
         "psr-0": { "Victoire\\Widget\\ImageBundle": "" }
