@@ -2,7 +2,7 @@
     "name": "friendsofvictoire/image-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS Image widget",
-    "keywords": ["DCMS", "Victoire", "Image", "widget", "FriendsofVictoire", "Dynamic", "CMS"],
+    "keywords": ["DCMS", "Victoire", "Image", "widget", "FriendsofVictoire", "FoV", "Dynamic", "CMS"],
     "homepage": "http://victoire.io",
     "license": "MIT",
     "authors": [
@@ -14,7 +14,7 @@
     "require": {
         "php"                                 : ">=5.3.3",
         "symfony/framework-bundle"            : "~2.3",
-        "victoire/victoire"                   : ">=1.2.2"
+        "victoire/victoire"                   : "~1.3.0"
     },
     "autoload": {
         "psr-0": { "Victoire\\Widget\\ImageBundle": "" }

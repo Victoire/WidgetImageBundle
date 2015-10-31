@@ -1,5 +1,7 @@
-#Victoire Image Bundle
+Victoire Image Bundle
 ============
+
+##What is the purpose of this bundle
 
 This bundle installs the Image Widget in your Victoire project.
 With this widget, you can add any type of image from your [Media Library](https://github.com/Victoire/victoire/tree/master/Bundle/MediaBundle)
@@ -27,7 +29,7 @@ Run the following composer command :
 
     php composer.phar require friendsofvictoire/image-widget
 
-##Reminder
+###Reminder
 
 Do not forget to add the bundle in your AppKernel !
 
