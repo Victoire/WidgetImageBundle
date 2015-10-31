@@ -1,14 +1,15 @@
 <?php
+
 namespace Victoire\Widget\ImageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Bundle\CoreBundle\Annotations as VIC;
-use Victoire\Bundle\PageBundle\Entity\Page;
 use Victoire\Bundle\MediaBundle\Entity\Media;
+use Victoire\Bundle\PageBundle\Entity\Page;
+use Victoire\Bundle\WidgetBundle\Entity\Widget;
 
 /**
- * WidgetImage
+ * WidgetImage.
  *
  * @ORM\Table("vic_widget_image")
  * @ORM\Entity
@@ -22,7 +23,6 @@ class WidgetImage extends Widget
      * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
      * @VIC\ReceiverProperty("imageable")
-     *
      */
     protected $image;
 
@@ -63,7 +63,7 @@ class WidgetImage extends Widget
      *
      * @ORM\Column(name="placement", type="string", length=255, nullable=true)
      */
-    protected $placement = "bottom";
+    protected $placement = 'bottom';
 
     /**
      * @ORM\Column(name="lazy_load", type="boolean", nullable=true)
@@ -87,6 +87,7 @@ class WidgetImage extends Widget
 
     /**
      * @var string
+     *
      * @deprecated
      * @ORM\Column(name="height", type="string", length=255, nullable=true)
      */
@@ -94,14 +95,17 @@ class WidgetImage extends Widget
 
     /**
      * @var string
+     *
      * @deprecated
      * @ORM\Column(name="width", type="string", length=255, nullable=true)
      */
     protected $width;
 
     /**
-     * Set image
+     * Set image.
+     *
      * @param string|Media $image
+     *
      * @return WidgetImage
      */
     public function setImage(Media $image)
@@ -112,7 +116,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get image
+     * Get image.
      *
      * @return string
      */
@@ -120,8 +124,10 @@ class WidgetImage extends Widget
     {
         return $this->image;
     }
+
     /**
-     * Set alt
+     * Set alt.
+     *
      * @param string $alt
      *
      * @return WidgetImage
@@ -134,7 +140,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get alt
+     * Get alt.
      *
      * @return string
      */
@@ -144,7 +150,8 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set title
+     * Set title.
+     *
      * @param string $title
      *
      * @return WidgetImage
@@ -157,7 +164,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get title
+     * Get title.
      *
      * @return string
      */
@@ -167,7 +174,8 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set popover
+     * Set popover.
+     *
      * @param string $popover
      *
      * @return WidgetImage
@@ -180,7 +188,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get popover
+     * Get popover.
      *
      * @return string
      */
@@ -190,7 +198,8 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set legend
+     * Set legend.
+     *
      * @param string $legend
      *
      * @return WidgetImage
@@ -203,7 +212,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get legend
+     * Get legend.
      *
      * @return string
      */
@@ -213,7 +222,8 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set linkType
+     * Set linkType.
+     *
      * @param string $linkType
      *
      * @return WidgetImage
@@ -226,7 +236,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get linkType
+     * Get linkType.
      *
      * @return string
      */
@@ -236,7 +246,8 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set url
+     * Set url.
+     *
      * @param string $url
      *
      * @return WidgetImage
@@ -249,7 +260,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get url
+     * Get url.
      *
      * @return string
      */
@@ -259,7 +270,6 @@ class WidgetImage extends Widget
     }
 
     /**
-     *
      * @return Page
      */
     public function getRelatedPage()
@@ -268,7 +278,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Legacy support
+     * Legacy support.
      *
      * @return Page
      */
@@ -282,7 +292,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get the url of the image
+     * Get the url of the image.
      *
      * @return string The url of the image
      */
@@ -300,7 +310,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get lazyLoad
+     * Get lazyLoad.
      *
      * @return string
      */
@@ -310,7 +320,8 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set lazyLoad
+     * Set lazyLoad.
+     *
      * @param string $lazyLoad
      *
      * @return $this
@@ -332,6 +343,7 @@ class WidgetImage extends Widget
 
     /**
      * @param string $hover
+     *
      * @return $this
      */
     public function setHover($hover)
@@ -351,6 +363,7 @@ class WidgetImage extends Widget
 
     /**
      * @param string $placement
+     *
      * @return $this
      */
     public function setPlacement($placement)
@@ -361,7 +374,8 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set height
+     * Set height.
+     *
      * @param string $height
      *
      * @return WidgetImage
@@ -374,7 +388,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get height
+     * Get height.
      *
      * @return string
      */
@@ -384,7 +398,8 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Set width
+     * Set width.
+     *
      * @param string $width
      *
      * @return WidgetImage
@@ -397,7 +412,7 @@ class WidgetImage extends Widget
     }
 
     /**
-     * Get width
+     * Get width.
      *
      * @return string
      */
@@ -405,5 +420,4 @@ class WidgetImage extends Widget
     {
         return $this->width;
     }
-
 }

@@ -11,12 +11,12 @@ use Victoire\Bundle\CoreBundle\Form\WidgetType;
 use Victoire\Bundle\WidgetBundle\Model\Widget;
 
 /**
- * WidgetImage form type
+ * WidgetImage form type.
  */
 class WidgetImageType extends WidgetType
 {
     /**
-     * define form fields
+     * define form fields.
      *
      * @param FormBuilderInterface $builder
      * @param array                $options
@@ -29,13 +29,13 @@ class WidgetImageType extends WidgetType
                     'label' => 'widget_image.form.image.label',
                 ])
                 ->add('lazyLoad', null, [
-                    'label' => 'widget_image.form.lazyLoad.label',
+                    'label'          => 'widget_image.form.lazyLoad.label',
                     'vic_help_label' => 'widget_image.form.lazyLoad.help_label',
                 ])
                 ->add('alt', null, [
-                    'label' => 'widget_image.form.alt.label',
+                    'label'    => 'widget_image.form.alt.label',
                     'required' => true,
-                    'attr'  => ['placeholder' => 'widget_image.form.alt.placeholder'],
+                    'attr'     => ['placeholder' => 'widget_image.form.alt.placeholder'],
                 ])
                 ->add('legend', null, [
                     'label' => 'widget_image.form.legend.label',
@@ -46,36 +46,32 @@ class WidgetImageType extends WidgetType
                 ])
                 ->add('hover', 'choice', [
                     'label' => 'widget_image.form.hover.label',
-                    'attr'  => array(
-                    'data-refreshOnChange' => "true",
-                    ),
-                    'choices'       => array(
+                    'attr'  => [
+                    'data-refreshOnChange' => 'true',
+                    ],
+                    'choices'       => [
                         'default' => 'widget_image.form.hover.choice.default.label',
                         'popover' => 'widget_image.form.hover.choice.popover.label',
                         'tooltip' => 'widget_image.form.hover.choice.tooltip.label',
-                    ),
-                ])
-            ;
+                    ],
+                ]);
 
             $builder->addEventListener(
                 FormEvents::PRE_SET_DATA,
-                function(FormEvent $event) {
+                function (FormEvent $event) {
                     self::manageRelativeFields($event->getForm(), $event->getData()->getHover());
                 }
             );
 
             $builder->get('hover')->addEventListener(
                 FormEvents::PRE_SUBMIT,
-                function(FormEvent $event) {
+                function (FormEvent $event) {
                     self::manageRelativeFields($event->getForm()->getParent(), (string) $event->getData());
                 }
             );
-
-
         }
         parent::buildForm($builder, $options);
     }
-
 
     protected function manageRelativeFields(FormInterface $form, $hover)
     {
@@ -86,46 +82,41 @@ class WidgetImageType extends WidgetType
                     'label' => 'widget_image.form.title.popover.label',
                 ])
                 ->add('popover', 'ckeditor', [
-                    'label' => 'widget_image.form.popover.label',
+                    'label'    => 'widget_image.form.popover.label',
                     'required' => false,
                 ])
                 ->add('placement', 'choice', [
-                    'label' => 'widget_image.form.placement.label',
+                    'label'   => 'widget_image.form.placement.label',
                     'choices' => [
                         'bottom' => 'widget_image.form.placement.bottom',
-                        'left' => 'widget_image.form.placement.left',
-                        'right' => 'widget_image.form.placement.right',
-                        'top' => 'widget_image.form.placement.top',
+                        'left'   => 'widget_image.form.placement.left',
+                        'right'  => 'widget_image.form.placement.right',
+                        'top'    => 'widget_image.form.placement.top',
                     ],
-                ])
-            ;
-        }
-        else if ($hover == 'tooltip') {
+                ]);
+        } elseif ($hover == 'tooltip') {
             $form
                 ->remove('popover')
                 ->add('title', null, [
                     'label' => 'widget_image.form.title.tooltip.label',
                 ])
                 ->add('placement', 'choice', [
-                    'label' => 'widget_image.form.placement.label',
+                    'label'   => 'widget_image.form.placement.label',
                     'choices' => [
                         'bottom' => 'widget_image.form.placement.bottom',
-                        'left' => 'widget_image.form.placement.left',
-                        'right' => 'widget_image.form.placement.right',
-                        'top' => 'widget_image.form.placement.top',
+                        'left'   => 'widget_image.form.placement.left',
+                        'right'  => 'widget_image.form.placement.right',
+                        'top'    => 'widget_image.form.placement.top',
                     ],
-                ])
-            ;
-        }
-        else {
+                ]);
+        } else {
             $form
                 ->remove('popover')
                 ->remove('tooltip')
                 ->remove('placement')
                 ->add('title', null, [
                     'label' => 'widget_image.form.title.label',
-                ])
-            ;
+                ]);
         }
     }
 
@@ -137,16 +128,16 @@ class WidgetImageType extends WidgetType
         parent::setDefaultOptions($resolver);
 
         $resolver->setDefaults(
-            array(
+            [
                 'data_class'         => 'Victoire\Widget\ImageBundle\Entity\WidgetImage',
                 'widget'             => 'Image',
                 'translation_domain' => 'victoire',
-            )
+            ]
         );
     }
 
     /**
-     * get form name
+     * get form name.
      *
      * @return string The name of the form
      */
