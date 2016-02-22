@@ -11,5 +11,5 @@ services:
     victoire.widget.form.image:
         class: Victoire\Widget\ImageBundle\Form\WidgetImageType
         tags:
-            - { name: form.type , alias: victoire_widget_form_image}
+            - { name: form.type }
 

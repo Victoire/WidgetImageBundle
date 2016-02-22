@@ -2,12 +2,16 @@
 
 namespace Victoire\Widget\ImageBundle\Form;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
+use Victoire\Bundle\FormBundle\Form\Type\LinkType;
+use Victoire\Bundle\MediaBundle\Form\Type\MediaType;
 use Victoire\Bundle\WidgetBundle\Model\Widget;
 
 /**
@@ -25,7 +29,7 @@ class WidgetImageType extends WidgetType
     {
         if ($options['mode'] === null || $options['mode'] === Widget::MODE_STATIC) {
             $builder
-                ->add('image', 'media', [
+                ->add('image', MediaType::class, [
                     'label' => 'widget_image.form.image.label',
                 ])
                 ->add('lazyLoad', null, [
@@ -40,19 +44,19 @@ class WidgetImageType extends WidgetType
                 ->add('legend', null, [
                     'label' => 'widget_image.form.legend.label',
                 ])
-                ->add('link', 'victoire_link', [
+                ->add('link', LinkType::class, [
                     'required'       => false,
                     'horizontal'     => true,
                 ])
-                ->add('hover', 'choice', [
-                    'label' => 'widget_image.form.hover.label',
-                    'attr'  => [
-                    'data-refreshOnChange' => 'true',
+                ->add('hover', ChoiceType::class, [
+                    'label'   => 'widget_image.form.hover.label',
+                    'choices' => [
+                        'widget_image.form.hover.choice.default.label' => 'default',
+                        'widget_image.form.hover.choice.popover.label' => 'popover',
+                        'widget_image.form.hover.choice.tooltip.label' => 'tooltip',
                     ],
-                    'choices'       => [
-                        'default' => 'widget_image.form.hover.choice.default.label',
-                        'popover' => 'widget_image.form.hover.choice.popover.label',
-                        'tooltip' => 'widget_image.form.hover.choice.tooltip.label',
+                    'attr'    => [
+                        'data-refreshOnChange' => 'true',
                     ],
                 ]);
 
@@ -75,24 +79,26 @@ class WidgetImageType extends WidgetType
 
     protected function manageRelativeFields(FormInterface $form, $hover)
     {
+        $positionChoices = [
+            'widget_image.form.placement.bottom' => 'bottom',
+            'widget_image.form.placement.left'   => 'left',
+            'widget_image.form.placement.right'  => 'right',
+            'widget_image.form.placement.top'    => 'top',
+        ];
+
         if ($hover == 'popover') {
             $form
                 ->remove('tooltip')
                 ->add('title', null, [
                     'label' => 'widget_image.form.title.popover.label',
                 ])
-                ->add('popover', 'ckeditor', [
+                ->add('popover', CKEditorType::class, [
                     'label'    => 'widget_image.form.popover.label',
                     'required' => false,
                 ])
-                ->add('placement', 'choice', [
+                ->add('placement', ChoiceType::class, [
                     'label'   => 'widget_image.form.placement.label',
-                    'choices' => [
-                        'bottom' => 'widget_image.form.placement.bottom',
-                        'left'   => 'widget_image.form.placement.left',
-                        'right'  => 'widget_image.form.placement.right',
-                        'top'    => 'widget_image.form.placement.top',
-                    ],
+                    'choices' => $positionChoices,
                 ]);
         } elseif ($hover == 'tooltip') {
             $form
@@ -100,14 +106,9 @@ class WidgetImageType extends WidgetType
                 ->add('title', null, [
                     'label' => 'widget_image.form.title.tooltip.label',
                 ])
-                ->add('placement', 'choice', [
+                ->add('placement', ChoiceType::class, [
                     'label'   => 'widget_image.form.placement.label',
-                    'choices' => [
-                        'bottom' => 'widget_image.form.placement.bottom',
-                        'left'   => 'widget_image.form.placement.left',
-                        'right'  => 'widget_image.form.placement.right',
-                        'top'    => 'widget_image.form.placement.top',
-                    ],
+                    'choices' => $positionChoices,
                 ]);
         } else {
             $form
@@ -121,11 +122,11 @@ class WidgetImageType extends WidgetType
     }
 
     /**
-     * @param OptionsResolverInterface $resolver
+     * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults(
             [
@@ -134,15 +135,5 @@ class WidgetImageType extends WidgetType
                 'translation_domain' => 'victoire',
             ]
         );
-    }
-
-    /**
-     * get form name.
-     *
-     * @return string The name of the form
-     */
-    public function getName()
-    {
-        return 'victoire_widget_form_image';
     }
 }
