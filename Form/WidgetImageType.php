@@ -56,7 +56,7 @@ class WidgetImageType extends WidgetType
                         'widget_image.form.hover.choice.tooltip.label' => 'tooltip',
                     ],
                     'choices_as_values' => true,
-                    'attr'    => [
+                    'attr'              => [
                         'data-refreshOnChange' => 'true',
                     ],
                 ]);
@@ -98,8 +98,8 @@ class WidgetImageType extends WidgetType
                     'required' => false,
                 ])
                 ->add('placement', ChoiceType::class, [
-                    'label'   => 'widget_image.form.placement.label',
-                    'choices' => $positionChoices,
+                    'label'             => 'widget_image.form.placement.label',
+                    'choices'           => $positionChoices,
                     'choices_as_values' => true,
                 ]);
         } elseif ($hover == 'tooltip') {
@@ -109,8 +109,8 @@ class WidgetImageType extends WidgetType
                     'label' => 'widget_image.form.title.tooltip.label',
                 ])
                 ->add('placement', ChoiceType::class, [
-                    'label'   => 'widget_image.form.placement.label',
-                    'choices' => $positionChoices,
+                    'label'             => 'widget_image.form.placement.label',
+                    'choices'           => $positionChoices,
                     'choices_as_values' => true,
                 ]);
         } else {
