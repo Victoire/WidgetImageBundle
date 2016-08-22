@@ -19,18 +19,12 @@
     "require": {
         "php": ">=5.5.9",
         "symfony/framework-bundle": "~2.8|~3.0",
-        "victoire/victoire": "~1.5"
+        "victoire/victoire": "~2"
     },
     "autoload": {
         "psr-0": {
             "Victoire\\Widget\\ImageBundle": ""
         }
     },
-    "minimum-stability": "dev",
-    "target-dir": "Victoire/Widget/ImageBundle",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.5.x-dev"
-        }
-    }
+    "target-dir": "Victoire/Widget/ImageBundle"
 }
