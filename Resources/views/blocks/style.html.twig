@@ -1,7 +1,6 @@
 <style>
     {%- for responsive in ['', 'xs', 'sm', 'md', 'lg'] -%}
         {%- set config = responsive != '' ? attribute(victoire_twig_responsive, responsive) : false -%}
-        {%- set config = responsive != '' ? attribute(victoire_twig_responsive, responsive) : false -%}
         {%- if config.min is defined -%}
             {%- set attr = "and (min-width: #{config.min}px)" -%}
         {%- endif -%}
