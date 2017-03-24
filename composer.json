@@ -1,5 +1,5 @@
 {
-    "name": "friendsofvictoire/image-widget",
+    "name": "victoire/image-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS Image widget",
     "keywords": [
