@@ -1,7 +1,9 @@
+[![CircleCI](https://circleci.com/gh/Victoire/WidgetImageBundle.svg?style=shield)](https://circleci.com/gh/Victoire/WidgetImageBundle)
+
 Victoire Image Bundle
 ============
 
-##What is the purpose of this bundle
+## What is the purpose of this bundle
 
 This bundle installs the Image Widget in your Victoire project.
 With this widget, you can add any type of image from your [Media Library](https://github.com/Victoire/victoire/tree/master/Bundle/MediaBundle)
@@ -19,17 +21,17 @@ Then, you can set up :
  * PopOver
  * ToolTip
 
-##Set Up Victoire
+## Set Up Victoire
 
 If you haven't already, you can follow the steps to set up Victoire *[here](https://github.com/Victoire/victoire/blob/master/Bundle/CoreBundle/Resources/doc/SETUP.md)*
 
-##Install the Image Bundle :
+## Install the Image Bundle :
 
 Run the following composer command :
 
-    php composer.phar require friendsofvictoire/image-widget
+    php composer.phar require victoire/image-widget
 
-###Reminder
+### Reminder
 
 Do not forget to add the bundle in your AppKernel !
 
