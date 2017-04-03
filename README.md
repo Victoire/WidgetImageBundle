@@ -23,7 +23,7 @@ Then, you can set up :
 
 ## Set Up Victoire
 
-If you haven't already, you can follow the steps to set up Victoire *[here](https://github.com/Victoire/victoire/blob/master/Bundle/CoreBundle/Resources/doc/SETUP.md)*
+If you haven't already, you can follow the steps to set up Victoire *[here](https://github.com/Victoire/victoire/blob/master/doc/setup.md)*
 
 ## Install the Image Bundle :
 
