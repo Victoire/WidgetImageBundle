@@ -26,23 +26,23 @@
         <source>widget_image.form.image.label</source>
         <target>Imagen</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.width.label" id="58e25b0b01f90">
+      <trans-unit  id="4b6a8a31946a4de1993a4dedfc3c6970" resname="widget_image.form.width.label">
         <source>widget_image.form.width.label</source>
         <target>Ancho</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.height.label" id="58e25b0b01fa4">
+      <trans-unit id="83fb8e962d75494cbd00692b15889ae8" resname="widget_image.form.height.label">
         <source>widget_image.form.height.label</source>
         <target>Altura</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.width.help_label" id="58e25b0b01fe1">
+      <trans-unit id="4042b9a5b83448b6b79806a56816dc97" resname="widget_image.form.width.help_label">
         <source>widget_image.form.width.help_label</source>
         <target>pixels</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.height.help_label" id="58e25b0b02004">
+      <trans-unit id="ce3952eebea14b91b3d2030eba22dc68" resname="widget_image.form.height.help_label">
         <source>widget_image.form.height.help_label</source>
         <target>pixels</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.alt.placeholder" id="58e25b0b0201b">
+      <trans-unit id="e96a00888e224005a29125248f40463b" resname="widget_image.form.alt.placeholder">
         <source>widget_image.form.alt.placeholder</source>
         <target>descripción de la imagen</target>
       </trans-unit>
@@ -58,63 +58,63 @@
         <source>widget_image.form.lazyLoad.label</source>
         <target>Cargar la imagen en modo eco (más rápido, ya cargada en un segundo tiempo)</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.popover.label" id="58e25b0b02034">
+      <trans-unit id="7fe210a5c0aa411991a1febab20fffdb" resname="widget_image.form.popover.label">
         <source>widget_image.form.popover.label</source>
         <target>Popover : contenido del texto</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.placement.label" id="58e25b0b02055">
+      <trans-unit id="967620a1103846888ce3eb90b27311dd" resname="widget_image.form.placement.label">
         <source>widget_image.form.placement.label</source>
         <target>Posición de la toolbox en relación a la imagen</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.placement.bottom" id="58e25b0b02070">
+      <trans-unit id="75829109f8fc4cb79a5001be3c179ccc" resname="widget_image.form.placement.bottom">
         <source>widget_image.form.placement.bottom</source>
         <target>Debajo</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.placement.left" id="58e25b0b0209a">
+      <trans-unit id="32475b880ec149c0a945a1d51d07bd22" resname="widget_image.form.placement.left">
         <source>widget_image.form.placement.left</source>
         <target>Izquierda</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.placement.right" id="58e25b0b020bc">
+      <trans-unit id="073c1a305c1042918892ebc48a681b97" resname="widget_image.form.placement.right">
         <source>widget_image.form.placement.right</source>
         <target>Derecho</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.placement.top" id="58e25b0b020d7">
+      <trans-unit id="833a43394cd144b3bd9cf8491d7975ce" resname="widget_image.form.placement.top">
         <source>widget_image.form.placement.top</source>
         <target>Arriba</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.title.popover.label" id="58e25b0b020e9">
+      <trans-unit  id="25d09a7278a04453b91445449ce49de0" resname="widget_image.form.title.popover.label">
         <source>widget_image.form.title.popover.label</source>
         <target>Título de Popover</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.title.tooltip.label" id="58e25b0b02113">
+      <trans-unit id="6e80ce55413d49d2bd2051294e969385" resname="widget_image.form.title.tooltip.label">
         <source>widget_image.form.title.tooltip.label</source>
         <target>Descripción emergente</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.hover.label" id="58e25b0b02134">
+      <trans-unit id="1db92129496d46afb5a7acc51a038eef" resname="widget_image.form.hover.label">
         <source>widget_image.form.hover.label</source>
         <target>Typo de descripcíon</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.hover.choice.default.label" id="58e25b0b0214f">
+      <trans-unit id="2118707613a34894b804c38113fe4966" resname="widget_image.form.hover.choice.default.label">
         <source>widget_image.form.hover.choice.default.label</source>
         <target>Ninguno</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.hover.choice.popover.label" id="58e25b0b02179">
+      <trans-unit id="4da5be63b8ee4ec1b23e9e0548bf46dc" resname="widget_image.form.hover.choice.popover.label">
         <source>widget_image.form.hover.choice.popover.label</source>
         <target>Popover</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.hover.choice.tooltip.label" id="58e25b0b0219d">
+      <trans-unit id="b69fbbdc554e4cf5af6e16ae4c417f61" resname="widget_image.form.hover.choice.tooltip.label">
         <source>widget_image.form.hover.choice.tooltip.label</source>
         <target>Tooltip</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.content.label" id="58e25b0b021c5">
+      <trans-unit id="598cb601a6304b4bb6527e50b2c0bb0a" resname="widget_image.form.content.label">
         <source>widget_image.form.content.label</source>
         <target>Contenido</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.link.label" id="58e25b0b021e9">
+      <trans-unit id="286e9bef5fde4c978d39cf3c7933ce04" resname="widget_image.form.link.label">
         <source>widget_image.form.link.label</source>
         <target>Vínculo</target>
       </trans-unit>
-      <trans-unit resname="widget_image.form.hover.label" id="58e25b0b0220b">
+      <trans-unit id="9eb2128caa8243bfb8a469140506e9a8" resname="widget_image.form.hover.label">
         <source>widget_image.form.hover.label</source>
         <target>Efecto de descripción emergente</target>
       </trans-unit>
