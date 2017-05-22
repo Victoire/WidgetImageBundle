@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Victoire\Bundle\CoreBundle\Annotations as VIC;
 use Victoire\Bundle\MediaBundle\Entity\Media;
 use Victoire\Bundle\PageBundle\Entity\Page;
+use Victoire\Bundle\WidgetBundle\Entity\Traits\LinkTrait;
 use Victoire\Bundle\WidgetBundle\Entity\Widget;
 
 /**
@@ -16,7 +17,8 @@ use Victoire\Bundle\WidgetBundle\Entity\Widget;
  */
 class WidgetImage extends Widget
 {
-    use \Victoire\Bundle\WidgetBundle\Entity\Traits\LinkTrait;
+    use LinkTrait;
+
     /**
      * @var string
      *
@@ -71,35 +73,10 @@ class WidgetImage extends Widget
     protected $lazyLoad = true;
 
     /**
-     * @deprecated, this field is now "page"
-     * we keep this field to avoid BC break
-     *
-     * @ORM\ManyToOne(targetEntity="Victoire\Bundle\PageBundle\Entity\Page")
-     * @ORM\JoinColumn(name="related_page_id", referencedColumnName="id", onDelete="cascade", nullable=true)
-     */
-    protected $relatedPage;
-
-    /**
      * @var string
      * @ORM\Column(name="hover", type="string", length=255, nullable=true)
      */
     protected $hover;
-
-    /**
-     * @var string
-     *
-     * @deprecated
-     * @ORM\Column(name="height", type="string", length=255, nullable=true)
-     */
-    protected $height;
-
-    /**
-     * @var string
-     *
-     * @deprecated
-     * @ORM\Column(name="width", type="string", length=255, nullable=true)
-     */
-    protected $width;
 
     /**
      * Set image.
@@ -270,28 +247,6 @@ class WidgetImage extends Widget
     }
 
     /**
-     * @return Page
-     */
-    public function getRelatedPage()
-    {
-        return $this->relatedPage;
-    }
-
-    /**
-     * Legacy support.
-     *
-     * @return Page
-     */
-    public function getPage()
-    {
-        if ($this->relatedPage != null) {
-            return $this->relatedPage;
-        }
-
-        return $this->page;
-    }
-
-    /**
      * Get the url of the image.
      *
      * @return string The url of the image
@@ -371,53 +326,5 @@ class WidgetImage extends Widget
         $this->placement = $placement;
 
         return $this;
-    }
-
-    /**
-     * Set height.
-     *
-     * @param string $height
-     *
-     * @return WidgetImage
-     */
-    public function setHeight($height)
-    {
-        $this->height = $height;
-
-        return $this;
-    }
-
-    /**
-     * Get height.
-     *
-     * @return string
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    /**
-     * Set width.
-     *
-     * @param string $width
-     *
-     * @return WidgetImage
-     */
-    public function setWidth($width)
-    {
-        $this->width = $width;
-
-        return $this;
-    }
-
-    /**
-     * Get width.
-     *
-     * @return string
-     */
-    public function getWidth()
-    {
-        return $this->width;
     }
 }
