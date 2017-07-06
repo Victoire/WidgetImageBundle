@@ -1,6 +1,8 @@
 services:
     victoire_core.widget_image_content_resolver:
-        parent: victoire_widget.base_widget_content_resolver
+        class: Victoire\Widget\ImageBundle\Resolver\WidgetImageContentResolver
+        arguments:
+            - "%victoire_twig.responsive%"
         tags:
             - { name: victoire_widget.widget_content_resolver, alias: Image }
     #alias to the entity
