@@ -1,6 +1,7 @@
 services:
     victoire_core.widget_image_content_resolver:
         class: Victoire\Widget\ImageBundle\Resolver\WidgetImageContentResolver
+        parent: victoire_widget.base_widget_content_resolver
         arguments:
             - "%victoire_twig.responsive%"
         tags:
