@@ -34,7 +34,6 @@ class WidgetImageType extends WidgetType
                 ])
                 ->add('lazyLoad', null, [
                     'label'          => 'widget_image.form.lazyLoad.label',
-                    'vic_help_label' => 'widget_image.form.lazyLoad.help_label',
                 ])
                 ->add('alt', null, [
                     'label'    => 'widget_image.form.alt.label',
