@@ -36,9 +36,9 @@
                 {% if form.tooltip is defined and form.tooltip %}
                     {{ form_row(form.tooltip) }}
                 {% endif %}
+                <div class="col-sm-12">{{ form_rest(form) }}</div>
             </div>
         </div>
-        {{ form_rest(form) }}
     </div>
     {{ form_end(form) }}
 </div>
